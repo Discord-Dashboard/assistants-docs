@@ -2,17 +2,17 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Assisants Technologies",
   "logo": {
-    "dark": "/logo/assistants.svg",
-    "light": "/logo/assistants.svg"
+    "dark": "/logo/Assistants_NoBG.svg",
+    "light": "/logo/Assistants_NoBG.svg"
   },
   "favicon": "/favicon.png",
   "colors": {
     "primary": "#ff0080",
-    "light": "#ff0080",
+    "light": "#e3e3e5",
     "dark": "#ff0080",
     "anchors": {
-      "from": "#e4243b",
-      "to": "#ff0080"
+      "from": "#963fc9",
+      "to": "#e5088f"
     }
   },
   "topbarLinks": [
@@ -52,7 +52,7 @@
     {
       "name": "Soft UI",
       "icon": "brush",
-      "url": "/soft-ui"
+      "url": "/soft-ui/introduction"
     },
     {
       "name": "Discord Dashboard Github",
@@ -112,9 +112,11 @@
         "soft-ui/docs/admin",
         "soft-ui/docs/color-scheme",
         "soft-ui/docs/custom-theme-options",
+        "soft-ui/docs/footer",
         "soft-ui/docs/icons",
         "soft-ui/docs/index",
         "soft-ui/docs/locales",
+        "soft-ui/docs/premium",
         "soft-ui/docs/support-email",
         "soft-ui/docs/website-name"
       ]
