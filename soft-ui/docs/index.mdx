@@ -1,0 +1,34 @@
+---
+title: "Index"
+description: "An Object which contains all the information for the index page."
+---
+
+You can see further details in the [graphs](/soft-ui/docs/custom-theme-options#graph) section.
+
+```js
+theme: SoftUI({
+  index: {
+    graph: {
+      enabled: Boolean,
+      lineGraph: Boolean,
+      tag: String,
+      max: Number,
+    },
+  },
+});
+```
+
+## Example Usage
+
+```js
+theme: SoftUI({
+  index: {
+    graph: {
+      enabled: true,
+      lineGraph: false,
+      tag: "Memory (MB)",
+      max: 100,
+    },
+  },
+});
+```

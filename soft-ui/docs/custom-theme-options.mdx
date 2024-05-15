@@ -1,0 +1,165 @@
+---
+title: "Custom Theme Options"
+---
+
+A [Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) for the home page which is called to fetch data for the cards and graph.
+
+## Example Usage
+
+```js
+theme: SoftUI({
+  customThemeOptions: {
+    index: async ({ req, res, config }) => {
+      const cards = [
+        {
+          title: "CPU",
+          icon: "single-02",
+          getValue: "Title",
+          progressBar: {
+            enabled: false,
+            getProgress: 50, // 0 - 100 (get a percentage of the progress)
+          },
+        },
+        // Include 3 more cards
+      ];
+
+      const graph = {
+        values: [690, 524, 345, 645, 478, 592, 468, 783, 459, 230, 621, 345],
+        labels: ["1m", "2m", "3m", "4m", "5m", "6m", "7m", "8m", "9m", "10m"],
+      };
+
+      return {
+        cards,
+        graph,
+      };
+    },
+  },
+});
+```
+
+## Properties
+
+### Cards
+
+An Array of addon IDs which will be imported into the theme.
+
+```js
+theme: SoftUI({
+  customThemeOptions: {
+    index: async ({ req, res, config }) => {
+      const cards = [
+        {
+          title: String,
+          icon: String,
+          getValue: String,
+          progressBar: {
+            enabled: Boolean,
+            getProgress: Number,
+          },
+        },
+      ];
+
+      return {
+        cards,
+      };
+    },
+  },
+});
+```
+
+#### Example Usage
+
+```js
+theme: SoftUI({
+    customThemeOptions: {
+        index: async ({ req, res, config }) => {
+            let username = req.session?.user?.username || "Guest",
+
+            const cards = [
+                {
+                    title: "Current User",
+                    icon: "single-02",
+                    getValue: username,
+                    progressBar: {
+                        enabled: false,
+                        getProgress: client.guilds.cache.size
+                    }
+                },
+                {
+                    title: "CPU",
+                    icon: "single-02",
+                    getValue: os.cpus()[0].model.replace('(R) Core(TM) ', ' ').replace(' CPU ', '').split('@')[0],
+                    progressBar: {
+                        enabled: false,
+                        getProgress: 50
+                    }
+                },
+                {
+                    title: "System Platform",
+                    icon: "single-02",
+                    getValue: os.platform(),
+                    progressBar: {
+                        enabled: false,
+                        getProgress: 50
+                    }
+                },
+                {
+                    title: "Server count",
+                    icon: "single-02",
+                    getValue: `${client.guilds.cache.size} out of 75`,
+                    progressBar: {
+                        enabled: true,
+                        getProgress: (client.guilds.cache.size / 75) * 100
+                    }
+                }
+            ]
+
+            return {
+                cards
+            }
+        }
+    }
+})
+```
+
+### Graph
+
+An Array of addon IDs which will be imported into the theme.
+
+```js
+theme: SoftUI({
+  customThemeOptions: {
+    index: async ({ req, res, config }) => {
+      const graph = {
+        values: Number[],
+        labels: String[],
+      };
+
+      return {
+        graph,
+      };
+    },
+  },
+});
+```
+
+#### Example Usage
+
+```js
+theme: SoftUI({
+  customThemeOptions: {
+    index: async ({ req, res, config }) => {
+      const graph = {
+        values: [690, 524, 345, 645, 478, 592, 468, 783, 459, 230, 621, 345],
+        labels: ["1m", "2m", "3m", "4m", "5m", "6m", "7m", "8m", "9m", "10m"],
+      };
+
+      return {
+        graph,
+      };
+    },
+  },
+});
+```
+
+<Tip>**Edit graph info [here](/soft-ui/docs/index)**</Tip>

@@ -1,0 +1,31 @@
+---
+title: "Addons"
+description: "An Array of addon IDs which will be imported into the theme."
+---
+
+```js
+theme: SoftUI({
+  addons: String[],
+});
+```
+
+## Example Usage
+
+```js
+theme: SoftUI({
+  addons: ["@softui"],
+});
+```
+
+## Possible Errors
+
+<Warning>
+  **Failed to initialise** The addon was generated using a different
+  discord-dashboard license, you must delete the file in order to use it as the
+  theme will generate a new working file.
+</Warning>
+
+<Warning>
+  **Could not fetch license information from discord-dashboard** The addon
+  manager was unable to fetch the current discord-dashboard license.
+</Warning>

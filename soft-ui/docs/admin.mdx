@@ -1,0 +1,32 @@
+---
+title: "Admin"
+description: "An Object which contains all the information for the admin page."
+---
+
+```js
+theme: SoftUI({
+  admin: {
+    pterodactyl: {
+      enabled: Boolean,
+      apiKey: String,
+      panelLink: String,
+      serverUUIDs: String[],
+    },
+  },
+});
+```
+
+## Example Usage
+
+```js
+theme: SoftUI({
+  admin: {
+    pterodactyl: {
+      enabled: false,
+      apiKey: "myPterodactylApiKey",
+      panelLink: "https://panel.example.com",
+      serverUUIDs: ["server-uuid-1", "server-uuid-2"],
+    },
+  },
+});
+```

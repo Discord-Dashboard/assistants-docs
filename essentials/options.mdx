@@ -1,0 +1,32 @@
+---
+title: "Options"
+icon: "pen"
+---
+
+## What are Options?
+
+Options are like the name suggest the options/values you can configure and make available on your dashboard. The options make use of the [Form Types](/essentials/formtypes.mdx)
+
+## What does Option Object looks like
+
+```javascript OptionObject
+{
+    /* Required options */
+    optionId: 'unique_id',
+    optionName: "Option Name",
+    optionDescription: "Option Description",
+    optionType: <FormType>,
+    getActualSet: async ({guild,user}) => {
+        return <FormTypeValueType>;
+    },
+    setNew: async ({guild,user,newData}) => {
+        return <FormTypeValueType>;
+    },
+    /* Optional options */
+    allowedCheck: async ({guild,user}) => {
+        if(guild.id == "123456789876")return {allowed: false, errorMessage: 'You cannot use this option - guild is blacklisted for it.'};
+        if(user.id == "123456789876")return {allowed: false, errorMessage: 'You cannot use this option - user is blacklisted for.'};
+        return {allowed: true, errorMessage: null};
+    }
+}
+```

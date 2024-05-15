@@ -1,0 +1,78 @@
+---
+title: "Categories"
+icon: "list"
+---
+
+## What are Categories?
+
+Discord-Dashboard allows you to create a two-tier system of options because you can divide them into categories. Therefore, all you need to do in the config Dashboard is to place a category object in the Array and Option objects for that option category in the Array.
+
+## What does Category Object looks like
+
+```javascript CategoryObject
+{
+    categoryId: 'unique_id',
+    categoryName: "Category Name",
+    categoryDescription: "Category Description",
+    categoryOptionsList: [
+        categoryOptionObject,
+        categoryOptionObject,
+    ]
+}
+```
+
+| Option              | Type   | Description                                                              |
+| ------------------- | ------ | ------------------------------------------------------------------------ |
+| categoryId          | String | Category ID (must be lowercase and unique).                              |
+| categoryName        | String | Category name. Can include HTML code.                                    |
+| categoryDescription | String | Category description. Can include HTML code.                             |
+| categoryOptionsList | Array  | An Array of the [categoryOptionObject](/essentials/options.mdx) Objects. |
+
+## Other categories
+
+### Toggleable
+
+```javascript CategoryObject
+{
+    categoryId: 'input',
+    categoryName: 'New Category',
+    categoryImageURL: 'URL To image',
+    categoryDescription: "Setup your bot with default settings!"
+    /* Heres the magical code! This is all you need to add to make it work */
+    toggleable: true,
+    getActualSet: async ({ guild }) => {
+        return settings['toggleeco'];
+    },
+    setNew: async ({ guild, newData }) => {
+        settings['toggleeco'] = newData;
+    },
+    /* End of magical code! */
+    categoryOptionsList: [
+        categoryOptionObject,
+        categoryOptionObject,
+    ]
+}
+```
+
+<Info>
+  When using this you do not need to add the getActualSet and setNew functions
+  to the [categoryOptionObject](/essentials/options.mdx)
+</Info>
+
+### Refresh on save
+
+```javascript CategoryObject
+{
+    categoryId: 'input',
+    categoryName: `New Category`,
+    categoryImageURL: 'URL To image',
+    categoryDescription: "Setup your bot with default settings!",
+    /* Heres the magical code! This is all you need to add to make it work */
+    refreshOnSave: true,
+    /* End of magical code! */
+    categoryOptionsList: [
+        categoryOptionObject,
+        categoryOptionObject,
+    ]
+}
+```

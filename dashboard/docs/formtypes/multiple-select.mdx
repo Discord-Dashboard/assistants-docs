@@ -1,0 +1,23 @@
+---
+title: "Multiple Select"
+---
+
+```
+DBD.formTypes.multiSelect(list, disabled, required),,
+```
+
+| Argument | Type    | Description                                                                                |
+| -------- | ------- | ------------------------------------------------------------------------------------------ |
+| list     | Object  | Array presented as follows: `{ displayName: valueReturned, displayName2: valueReturned2 }` |
+| disabled | Boolean | Boolean check for if the select should be disabled or not.                                 |
+| required | Boolean | Boolean check for if the select should be required or not.                                 |
+
+## Data required for getActualSet function
+
+Array, list of `valueReturned` to be selected.
+
+<Important> If any, return empty Array - **no null or undefined**.</Important>
+
+## Data returned
+
+Array, list of selected `valueReturned` values | or an empty Array.

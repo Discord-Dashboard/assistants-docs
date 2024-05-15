@@ -1,91 +1,127 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Assisants Technologies",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/assistants.svg",
+    "light": "/logo/assistants.svg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#ff0080",
+    "light": "#ff0080",
+    "dark": "#ff0080",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#e4243b",
+      "to": "#ff0080"
     }
   },
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:support@assistantscenter.com"
     }
   ],
   "topbarCtaButton": {
     "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "url": "https://assistantscenter.com"
+  },
+  "primaryTab": {
+    "name": "Home"
   },
   "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference"
+      "name": "Discord Dashboard",
+      "url": "dashboard"
+    },
+    {
+      "name": "Soft UI",
+      "url": "soft-ui"
     }
   ],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
+      "name": "Discord",
+      "icon": "discord",
       "url": "https://mintlify.com/docs"
     },
     {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "name": "Discord Dashboard",
+      "icon": "server",
+      "url": "/dashboard"
     },
     {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "name": "Soft UI",
+      "icon": "brush",
+      "url": "/soft-ui"
+    },
+    {
+      "name": "Discord Dashboard Github",
+      "icon": "github",
+      "url": "https://github.com/Discord-Dashboard/Core"
+    },
+    {
+      "name": "Soft UI Github",
+      "icon": "github",
+      "url": "https://github.com/Discord-Dashboard/Soft-UI"
     }
   ],
   "navigation": [
     {
       "group": "Get Started",
-      "pages": [
-        "introduction",
-        "quickstart",
-        "development"
-      ]
+      "pages": ["introduction", "quickstart"]
     },
     {
       "group": "Essentials",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "essentials/categories",
+        "essentials/options",
+        "essentials/formtypes"
+      ]
+    },
+
+    {
+      "group": "Discord Dashboard",
+      "pages": ["dashboard/introduction"]
+    },
+    {
+      "group": "Form Types",
+      "pages": [
+        "dashboard/docs/formtypes/channels-select",
+        "dashboard/docs/formtypes/channels-multi-select",
+        "dashboard/docs/formtypes/checkbox",
+        "dashboard/docs/formtypes/color-select",
+        "dashboard/docs/formtypes/embed-builder",
+        "dashboard/docs/formtypes/input",
+        "dashboard/docs/formtypes/multiple-select",
+        "dashboard/docs/formtypes/roles-select",
+        "dashboard/docs/formtypes/roles-multi-select",
+        "dashboard/docs/formtypes/select",
+        "dashboard/docs/formtypes/spacer",
+        "dashboard/docs/formtypes/switch",
+        "dashboard/docs/formtypes/text-area"
       ]
     },
     {
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
+      "group": "Soft UI",
+      "pages": ["soft-ui/introduction"]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Theme Options",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "soft-ui/docs/addons",
+        "soft-ui/docs/admin",
+        "soft-ui/docs/color-scheme",
+        "soft-ui/docs/custom-theme-options",
+        "soft-ui/docs/icons",
+        "soft-ui/docs/index",
+        "soft-ui/docs/locales",
+        "soft-ui/docs/support-email",
+        "soft-ui/docs/website-name"
       ]
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "discord": "https://discord.gg/6Yv5U9V3ux",
+    "github": "https://github.com/Discord-Dashboard"
   }
 }

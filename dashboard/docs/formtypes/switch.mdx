@@ -1,0 +1,31 @@
+---
+title: "Switch"
+---
+
+```
+DBD.formTypes.switch(disabled),
+```
+
+| Argument | Type    | Description                    |
+| -------- | ------- | ------------------------------ |
+| disabled | Boolean | Whether the switch is disabled |
+
+## Data required for getActualSet function
+
+Boolean, to be turned on or not.
+
+**Important:**
+
+Please note that `if(saved.state)` will return false if data is not set. If you want to default state to be true, use this:
+
+```javascript
+getActualSet: ({ guild, user }) => {
+  return SAVED_STATE == null || SAVED_STATE == undefined
+    ? DEFAULT_STATE
+    : SAVED_STATE;
+};
+```
+
+## Data returned
+
+Boolean, true if turned on - false if turned off.

@@ -1,62 +1,264 @@
 ---
-title: 'Quickstart'
-description: 'Start building awesome documentation in under 5 minutes'
+title: "Quickstart"
+description: "Start building a awesome dashboard in 5 minutes!"
 ---
 
-## Setup your development
+## Setup your environment
 
-Learn how to update your docs locally and and deploy them to the public.
+Learn how to develop your Dashboard
 
-### Edit and preview
+<Steps>
+  <Step title="Installing Node.js">
+    To use discord-dashboard, you'll need to install [Node.js](https://nodejs.org/).
 
-<AccordionGroup>
-  <Accordion icon="github" title="Clone your docs locally">
-    During the onboarding process, we created a repository on your Github with
-    your docs content. You can find this repository on our
-    [dashboard](https://dashboard.mintlify.com). To clone the repository
-    locally, follow these
-    [instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
-    in your terminal.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Preview changes">
-    Previewing helps you make sure your changes look as intended. We built a
-    command line interface to render these changes locally. 1. Install the
-    [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the
-    documentation changes locally with this command: ``` npm i -g mintlify ```
-    2. Run the following command at the root of your documentation (where
-    `mint.json` is): ``` mintlify dev ```
-  </Accordion>
-</AccordionGroup>
+    <Tip>
 
-### Deploy your changes
+To check if you already have Node installed, run `node -v` in your terminal.
 
-<AccordionGroup>
+</Tip>
 
-<Accordion icon="message-bot" title="Install our Github app">
-  Our Github app automatically deploys your changes to your docs site, so you
-  don't need to manage deployments yourself. You can find the link to install on
-  your [dashboard](https://dashboard.mintlify.com). Once the bot has been
-  successfully installed, there should be a check mark next to the commit hash
-  of the repo.
-</Accordion>
-<Accordion icon="rocket" title="Push your changes">
-  [Commit and push your changes to
-  Git](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository#about-git-push)
-  for your changes to update in your docs site. If you push and don't see that
-  the Github app successfully deployed your changes, you can also manually
-  update your docs through our [dashboard](https://dashboard.mintlify.com).
-</Accordion>
+  </Step>
+  <Step title="Setting up your project">
+    To use discord-dashboard, you'll need to install it via `npm` (which comes pre-installed with Node).
 
-</AccordionGroup>
+    If you want to use a different package manager like [pnpm](https://pnpm.io/), [yarn](https://yarnpkg.com/) or [bun](https://bun.sh/) you can replace the commands with the proper command name.
 
-## Update your docs
+    Navigate to a suitable place on your machine and create a folder named whatever you wish!
 
-Add content directly in your files with MDX syntax and React components. You can use any of our components, or even build your own.
+  </Step>
+  <Step title="Opening the terminal">
+
+<Tip>
+  If you use [Visual Studio Code](https://code.visualstudio.com/), you can press{" "}
+  <code>Ctrl + `</code> (backtick) to open its integrated terminal.
+</Tip>
+
+    On Microsoft Windows, either:
+
+- `Shift + Right-click` inside your project directory and choose the "Open command window here" option
+- Press `Win + R` and run `cmd.exe` then `cd` into your project directory
+
+On Apple macOS, either:
+
+- Open Launchpad or Spotlight and search for "Terminal"
+- In your "Applications" folder, under "Utilities", open the Terminal app
+
+On Linux, you can quickly open the terminal with `Ctrl + Alt + T`.
+
+  </Step>
+  <Step title="Verifying Node is installed">
+  With the terminal open, run `node -v` to ensure you've successfully installed Node.js.
+  </Step>
+    <Step title="Initiating a project folder">
+  <CodeGroup>
+
+```javascript npm
+npm init
+```
+
+```javascript yarn
+yarn init
+```
+
+```javascript pnpm
+pnpm init
+```
+
+```javascript bun
+bun init
+```
+
+</CodeGroup>
+
+This next command creates a `package.json` file for you, which keeps track of dependencies of your project as well as some other stuff!
+
+It will ask you a sequence of questions, you should answer them as you see fit. If you're not sure on something or want to skip it; leave it blank and press enter.
+
+Once you're done answering the questions, you're ready to install discord-dashboard!
+
+  </Step>
+
+    <Step title="Installing modules">
+
+Now that you've installed Node.js and know how to open your console and run commands, you can finally install discord-dashboard and Soft-UI!
+Run the following command in your terminal:
+
+  <CodeGroup>
+
+```javascript npm
+npm install discord-dashboard dbd-soft-ui discord.js
+```
+
+```javascript yarn
+yarn add discord-dashboard dbd-soft-ui discord.js
+```
+
+```javascript pnpm
+pnpm add discord-dashboard dbd-soft-ui discord.js
+```
+
+```javascript bun
+bun add discord-dashboard dbd-soft-ui discord.js
+```
+
+</CodeGroup>
+
+And now that we've installed the necessities, we can start setting up the dashboard!
+
+  </Step>
+</Steps>
+
+## Setup the project
+
+<Steps>
+  <Step title="Creating config.json">
+    We will be creating a new file, `config.json`, which will house all our
+    important (and secret) settings! Paste the following code into the file and
+    replace as necessary:
+
+    ```json config.json
+    {
+    "discord": {
+        "token": "discordToken",
+        "client": {
+            "id": "clientId",
+            "secret": "clientSecret"
+        }
+    },
+    "dbd": {
+        "port": 80,
+        "domain": "http://localhost",
+        "redirectUri": "/discord/callback",
+        "license": "dbdLicense",
+        "ownerIDs": ["Dashboard Admin Discord User IDs"]
+    }
+
+}
+
+````
+
+The configuration above will not work unless you change the values of the properties.
+
+  </Step>
+    <Step title="Creating index.js">
+  Create a new file, `index.js` (or anything you'd like) and paste the discord-dashboard handler into it.
+
+  ```javascript index.js
+  // Define Packages
+const { Client, GatewayIntentBits } = require('discord.js');
+const SoftUI = require('dbd-soft-ui');
+const config = require('./config.json');
+let DBD = require('discord-dashboard');
+
+const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+client.login(config.discord.token);
+
+const Handler = new DBD.Handler(
+    /*
+            Keyv storage instance
+            Example: { store: new KeyvMongo('mongodb://user:pass@localhost:27017/dbname') }
+
+            Can be left empty to use the default storage (Keyv with SQLite)
+        */
+);
+
+(async ()=>{
+    await DBD.useLicense(config.dbd.license);
+    DBD.Dashboard = DBD.UpdatedClass();
+
+    const Dashboard = new DBD.Dashboard({
+        port: config.dbd.port,
+        client: config.discord.client,
+        redirectUri: `${config.dbd.domain}${config.dbd.redirectUri}`,
+        domain: config.dbd.domain,
+        ownerIDs: config.dbd.ownerIDs,
+        useThemeMaintenance: true,
+        useTheme404: true,
+        bot: client,
+        theme: SoftUI({
+            storage: Handler,
+            customThemeOptions: {
+                index: async ({ req, res, config }) => {
+                    return {
+                        values: [],
+                        graph: {},
+                        cards: [],
+                    }
+                },
+            },
+            websiteName: "Assistants",
+            colorScheme: "pink",
+            supporteMail: "support@support.com",
+            icons: {
+                favicon: 'https://assistantscenter.com/wp-content/uploads/2021/11/cropped-cropped-logov6.png',
+                noGuildIcon: "https://pnggrid.com/wp-content/uploads/2021/05/Discord-Logo-Circle-1024x1024.png",
+                sidebar: {
+                    darkUrl: 'https://assistantscenter.com/img/logo.png',
+                    lightUrl: 'https://assistanscenter.com/img/logo.png',
+                    hideName: true,
+                    borderRadius: false,
+                    alignCenter: true
+                },
+            },
+            index: {
+                graph: {
+                    enabled: true,
+                    lineGraph: false,
+                    title: 'Memory Usage',
+                    tag: 'Memory (MB)',
+                    max: 100
+                },
+            },
+            sweetalert: {
+                errors: {},
+                success: {
+                    login: "Successfully logged in.",
+                }
+            },
+            preloader: {
+                image: "/img/soft-ui.webp",
+                spinner: false,
+                text: "Page is loading",
+            },
+            admin: {
+                pterodactyl: {
+                    enabled: false,
+                    apiKey: "apiKey",
+                    panelLink: "https://panel.website.com",
+                    serverUUIDs: []
+                }
+            },
+            commands: [],
+        }),
+        settings: []
+    });
+    Dashboard.init();
+})();
+````
+
+  </Step>
+
+  <Step title="Generating a license">
+  Before you can use discord-dashboard, you need to generate a [license](https://store.assistantscenter.com/).
+  Once you've generated a license, add it to the configuration file.
+  </Step>
+</Steps>
+
+## Having issues?
+
+Join our Discord server if you're encountering any issues!
+Make sure to give us detailed information on how to reproduce this error and any logs/errors you see in the console.
+
+## What's next?
 
 <CardGroup>
 
-<Card title="Style Your Docs" icon="paintbrush" href="/settings/global">
-  Add flair to your docs with personalized branding.
+<Card
+  title="Change Images and Texts"
+  icon="paintbrush"
+  href="/soft-ui/docs/locales"
+>
+  Change any text or image to your own.
 </Card>
 
 <Card
