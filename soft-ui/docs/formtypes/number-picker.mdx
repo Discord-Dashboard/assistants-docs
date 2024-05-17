@@ -1,0 +1,41 @@
+---
+title: "Number Picker"
+---
+
+```
+SoftUI.formTypes.numberPicker(min, max, disabled),
+```
+
+| Argument | Type    | Description                                          |
+| -------- | ------- | ---------------------------------------------------- |
+| min      | Number  | The minimum value of the number picker               |
+| max      | Number  | The maximum value of the number picker               |
+| disabled | Boolean | A boolean which shows if the picker appears disabled |
+
+## Data required for getActualSet function
+
+Number
+
+## Data returned
+
+Number | or null
+
+## Example Usage
+
+```javascript
+{
+    optionId: "amount_of_warn",
+    optionName: "Warning amount",
+    optionDescription: "After how many warns should I mute a user?",
+    optionType: SoftUI.formTypes.numberPicker(1, 10, false),
+    getActualSet: ({ guild }) => {
+      return warnAmount[guild.id];
+    },
+    setNew: ({ guild, newData }) => {
+      warnAmount[guild.id] = newData;
+      return;
+    },
+},
+```
+
+<img height="200" src="/images/formtypes/softui-numberpicker.png" />

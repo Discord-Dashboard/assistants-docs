@@ -1,0 +1,67 @@
+---
+title: "Blacklisted"
+description: "An Object which contains all the information for the blacklisted page."
+---
+
+```js
+theme: SoftUI({
+  blacklisted: {
+    title: String,
+    subtitle: String,
+    description: String,
+    button: {
+      enabled: Boolean,
+      text: String,
+      link: String,
+    },
+  },
+});
+```
+
+## Example Usage
+
+```js
+theme: SoftUI({
+  blacklisted: {
+    title: "Blacklisted",
+    subtitle: "Access denied",
+    description:
+      "Unfortunately it seems that you have been blacklisted from the dashboard.",
+    button: {
+      enabled: false,
+      text: "Return",
+      link: "https://google.com",
+    },
+  },
+});
+```
+
+## Properties
+
+### title
+
+A String which sets the title of the blacklisted page.
+
+### subtitle
+
+A String which sets the subtitle of the blacklisted page.
+
+### description
+
+A String which sets the description of the blacklisted page.
+
+### button
+
+An Object which contains all the information for the blacklisted button.
+
+### button.enabled
+
+A Boolean which enables the button.
+
+### button.text
+
+A String which sets the text of the button.
+
+### button.link
+
+A String which sets the link of the button.

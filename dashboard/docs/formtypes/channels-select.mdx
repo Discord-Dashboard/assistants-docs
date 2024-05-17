@@ -1,0 +1,43 @@
+---
+title: "Channels Select"
+---
+
+```
+DBD.formTypes.channelsSelect(disabled, channelTypes = [ChannelType.GuildText], hideNSW, onlyNSFW, hideNoAccess),),
+```
+
+| Argument     | Type    | Description                                                              |
+| ------------ | ------- | ------------------------------------------------------------------------ |
+| disabled     | Boolean | Boolean check for if the channels select should be disabled or not.      |
+| channelTypes | Array   | An Array (!) of types of channels to be included in the channels select. |
+| hideNSW      | Boolean | Boolean check for if the NSFW channels should be hidden or not.          |
+| onlyNSFW     | Boolean | Boolean check for if the only NSFW channels should be shown or not.      |
+| hideNoAccess | Boolean | Boolean check for if the no access channels should be hidden or not.     |
+
+## Data required for getActualSet function
+
+String, channel ID.
+
+## Data returned
+
+String, channel ID | or null.
+
+## Example Usage
+
+```javascript
+{
+    optionId: 'welcome_channel',
+    optionName: "Welcome channel",
+    optionDescription: "Select welcome message channel on this guild.",
+    optionType: DBD.formTypes.channelsSelect(false, [ChannelType.GuildText]),
+    getActualSet: async ({guild}) => {
+        return welcomeChannel[guild.id];
+    },
+    setNew: async ({guild,newData}) => {
+        welcomeChannel[guild.id] = newData;
+        return;
+    }
+},
+```
+
+<img height="200" src="/images/formtypes/dbd-channelsselect.png" />

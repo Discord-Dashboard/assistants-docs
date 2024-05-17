@@ -1,0 +1,48 @@
+---
+title: "Sidebar"
+description: "An Object which contains all the sidebar information."
+---
+
+```js
+theme: SoftUI({
+  sidebar: {
+    gestures: {
+      disabled: Boolean,
+      gestureTimer: Number,
+      gestureSensitivity: Number,
+    },
+  },
+});
+```
+
+## Example Usage
+
+```js
+theme: SoftUI({
+  sidebar: {
+    gestures: {
+      disabled: false,
+      gestureTimer: 200,
+      gestureSensitivity: 50,
+    },
+  },
+});
+```
+
+## Properties
+
+### gestures
+
+An Object which contains all the sidebar information.
+
+### gestures.disabled
+
+A Boolean which will disable the swipe gestures on the sidebar.
+
+### gestures.gestureTimer
+
+A Number in milliseconds which will change how long the gesture lasts for.
+
+### gestures.gestureSensitivity
+
+A Number in pixels that the user must swipe before the gesture is visible.

@@ -1,0 +1,108 @@
+---
+title: "Log Handler"
+description: "This is a log handler for your bot. It will collect all the logs from your bot and display them in the dashboard's admin page."
+---
+
+## Dashboard Setup
+
+Place this in your admin config which is located in the theme config and change the key to your own **SECURE** string.
+
+```js
+theme: SoftUI({
+  admin: {
+    logs: {
+      enabled: Boolean,
+      key: String,
+    },
+  },
+});
+```
+
+### Example Usage
+
+```js
+theme: SoftUI({
+  admin: {
+    logs: {
+      enabled: true,
+      key: "place your key here!",
+    },
+  },
+});
+```
+
+## Bot Setup
+
+Install the NPM package in **Bot**
+
+<CodeGroup>
+
+```bash npm
+npm install @dbd-soft-ui/logs
+```
+
+```bash yarn
+yarn add @dbd-soft-ui/logs
+```
+
+```bash pnpm
+pnpm add @dbd-soft-ui/logs
+```
+
+```bash bun
+bun add @dbd-soft-ui/logs
+```
+
+</CodeGroup>
+
+Almost done! Place this code into your ready event on the bot.
+
+```js
+const DLU = require("@dbd-soft-ui/logs");
+
+client.on("ready", () => {
+  DLU.register(client, {
+    dashboard_url: String,
+    key: String,
+  });
+});
+
+process.on("unhandledRejection", (reason, p) => {
+  DLU.send(client, {
+    title: String,
+    description: reason,
+  });
+});
+```
+
+It should look like this, except with your details:
+
+```js
+const DLU = require("@dbd-soft-ui/logs");
+
+client.on("ready", () => {
+  DLU.register(client, {
+    dashboard_url: "https://softui.assistantscenter.com",
+    key: "YOURKEYHERE",
+  });
+});
+
+process.on("unhandledRejection", (reason, p) => {
+  DLU.send(client, {
+    title: "Unhandled Rejection",
+    description: reason,
+  });
+});
+```
+
+And we are done! Now just restart your dashboard and bot then the logs collection will begin.
+
+## Properties
+
+### dashboard_url
+
+A String with the url to your dashboard
+
+### key
+
+A String with the secret key from your dashboard

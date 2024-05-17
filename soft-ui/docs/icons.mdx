@@ -50,200 +50,33 @@ theme: SoftUI({
 
 A String which is the background image on the settings page of the guilds.
 
-```js
-theme: SoftUI({
-  icons: {
-    backgroundImage: String,
-  },
-});
-```
-
-#### Example Usage
-
-```js
-theme: SoftUI({
-  icons: {
-    backgroundImage:
-      "https://www.imageshine.in/uploads/gallery/geometric-Blue-Wallpaper-Free-Download.jpg",
-  },
-});
-```
-
 ### favicon
 
 A String which is the favicon of the website.
-
-```js
-theme: SoftUI({
-  icons: {
-    favicon: String,
-  },
-});
-```
-
-#### Example Usage
-
-```js
-theme: SoftUI({
-  icons: {
-    favicon:
-      "https://assistantscenter.com/wp-content/uploads/2021/11/cropped-cropped-logov6.png",
-  },
-});
-```
 
 ### noGuildIcon
 
 A String which is the image of a guild with no icon.
 
-```js
-theme: SoftUI({
-  icons: {
-    noGuildIcon: String,
-  },
-});
-```
-
-#### Example Usage
-
-```js
-theme: SoftUI({
-  icons: {
-    noGuildIcon:
-      "https://assistantscenter.com/wp-content/uploads/2021/11/cropped-cropped-logov6.png",
-  },
-});
-```
-
 ### sidebar
 
-```js
-theme: SoftUI({
-  icons: {
-    sidebar: {
-      darkUrl: String,
-      lightUrl: String,
-      hideName: Boolean,
-      borderRadius: Boolean,
-      alignCenter: Boolean,
-    },
-  },
-});
-```
-
-#### Example Usage
-
-```js
-theme: SoftUI({
-  icons: {
-    sidebar: {
-      darkUrl: "https://assistantscenter.com/img/logo.png",
-      lightUrl: "https://assistanscenter.com/img/logo.png",
-      hideName: true,
-      borderRadius: false,
-      alignCenter: true,
-    },
-  },
-});
-```
+An Object which contains the sidebar information.
 
 ### sidebar.darkUrl
 
 A String which is the icon of the website when using dark mode.
 
-```js
-theme: SoftUI({
-  icons: {
-    sidebar: {
-      darkUrl: String,
-    },
-  },
-});
-```
-
-#### Example Usage
-
-```js
-theme: SoftUI({
-  icons: {
-    sidebar: {
-      darkUrl:
-        "https://assistantscenter.com/wp-content/uploads/2021/11/cropped-cropped-logov6.png",
-    },
-  },
-});
-```
-
 ### sidebar.lightUrl
 
 A String which is the icon of the website when using light mode.
-
-```js
-theme: SoftUI({
-  icons: {
-    sidebar: {
-      lightUrl: String,
-    },
-  },
-});
-```
-
-#### Example Usage
-
-```js
-theme: SoftUI({
-  icons: {
-    sidebar: {
-      lightUrl:
-        "https://assistantscenter.com/wp-content/uploads/2021/11/cropped-cropped-logov6.png",
-    },
-  },
-});
-```
 
 ### sidebar.hideName
 
 A Boolean which is whether you'd like to hide the website name next to the icon.
 
-```js
-theme: SoftUI({
-  icons: {
-    sidebar: {
-      hideName: Boolean,
-    },
-  },
-});
-```
-
-#### Example Usage
-
-```js
-theme: SoftUI({
-  icons: {
-    sidebar: {
-      hideName: true,
-    },
-  },
-});
-```
-
 ### sidebar.borderRadius
 
 A Boolean which is whether you'd like to set the border radius of the icon.
-
-If you wish to set the border radius of the icon, you can do so by setting this to the size instead of a Boolean.
-
-```js
-theme: SoftUI({
-  icons: {
-    sidebar: {
-      borderRadius: Boolean | String,
-    },
-  },
-});
-```
-
-#### Example Usage
 
 If you wish to set the border radius of the icon, you can do so by setting this to the size instead of a Boolean.
 
@@ -272,25 +105,3 @@ theme: SoftUI({
 ### sidebar.alignCenter
 
 A Boolean which is whether you'd like the icon to be centered on the sidebar.
-
-```js
-theme: SoftUI({
-  icons: {
-    sidebar: {
-      alignCenter: Boolean,
-    },
-  },
-});
-```
-
-#### Example Usage
-
-```js
-theme: SoftUI({
-  icons: {
-    sidebar: {
-      alignCenter: true,
-    },
-  },
-});
-```

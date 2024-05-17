@@ -29,3 +29,25 @@ getActualSet: ({ guild, user }) => {
 ## Data returned
 
 Boolean, true if turned on - false if turned off.
+
+## Example Usage
+
+```js
+{
+  optionId: 'switch_coffee',
+  optionName: "Coffee switch",
+  optionDescription: "Do you want coffee to be sent daily to you?",
+  optionType: DBD.formTypes.switch(false),
+  getActualSet: async ({guild}) => {
+      const SAVED_STATE = switchData[guild.id];
+      const DEFAULT_STATE = true;
+      return (SAVED_STATE == null || SAVED_STATE == undefined) ? DEFAULT_STATE : SAVED_STATE;
+  },
+  setNew: async ({guild,newData}) => {
+      switchData[guild.id] = newData;
+      return;
+  }
+},
+```
+
+<img height="200" src="/images/formtypes/dbd-switch.png" />

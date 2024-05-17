@@ -18,3 +18,23 @@ String, `valueReturned` value for option actual set.
 ## Data returned
 
 String, `valueReturned` value for option selected.
+
+## Example Usage
+
+```javascript
+{
+    optionId: 'lang',
+    optionName: "Language",
+    optionDescription: "Change bot's language easily",
+    optionType: DBD.formTypes.select({"Polish": 'pl', "English": 'en', "French": 'fr'}),
+    getActualSet: async ({guild}) => {
+        return langsSettings[guild.id] || null;
+    },
+    setNew: async ({guild,newData}) => {
+        langsSettings[guild.id] = newData;
+        return;
+    }
+},
+```
+
+<img height="200" src="/images/formtypes/dbd-select.png" />

@@ -1,0 +1,39 @@
+---
+title: "Emoji Picker"
+---
+
+```
+SoftUI.formTypes.emojiPicker(disabled),
+```
+
+| Argument | Type    | Description                                          |
+| -------- | ------- | ---------------------------------------------------- |
+| disabled | Boolean | A boolean which shows if the picker appears disabled |
+
+## Data required for getActualSet function
+
+Object, your emoji object.
+
+## Data returned
+
+Object | or null.
+
+## Example Usage
+
+```javascript
+{
+    optionId: "join_emoji",
+    optionName: "Emoji",
+    optionDescription: "Which Emoji should I use?",
+    optionType: SoftUI.formTypes.emojiPicker(false),
+    getActualSet: ({ guild }) => {
+      return emoji[guild.id];
+    },
+    setNew: ({ guild, newData }) => {
+      emojiPicker[guild.id] = newData;
+      return;
+    },
+}
+```
+
+<img height="200" src="/images/formtypes/softui-emojipicker.png" />

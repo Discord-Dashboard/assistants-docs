@@ -1,0 +1,40 @@
+---
+title: "Color Select"
+---
+
+```
+DBD.formTypes.colorSelect(defaultState, disabled),
+```
+
+| Argument     | Type    | Description                                                      |
+| ------------ | ------- | ---------------------------------------------------------------- |
+| defaultState | String  | Default state HEX color.                                         |
+| disabled     | Boolean | Boolean check for if the color select should be disabled or not. |
+
+## Data required for getActualSet function
+
+String, actual set HEX color.
+
+## Data returned
+
+String, new HEX color.
+
+## Example Usage
+
+```javascript
+{
+    optionId: 'welcome_embed_color',
+    optionName: "Welcome Embed Color",
+    optionDescription: "Set embed color on member join.",
+    optionType: DBD.formTypes.colorSelect('#fff000', false),
+    getActualSet: async ({guild}) => {
+        return welcomeColorData[guild.id];
+    },
+    setNew: async ({guild,newData}) => {
+        welcomeColorData[guild.id] = newData || null;
+        return;
+    }
+},
+```
+
+<img height="200" src="/images/formtypes/dbd-colorselect.png" />

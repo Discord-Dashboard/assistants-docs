@@ -1,0 +1,50 @@
+---
+title: "Sweet Alert"
+description: "An Object which contains all the SweetAlert information."
+---
+
+```js
+theme: SoftUI({
+  sweetalert: {
+    errors: {
+      requirePremium: String,
+    },
+    success: {
+      login: String,
+    },
+  },
+});
+```
+
+## Example Usage
+
+```js
+theme: SoftUI({
+  sweetalert: {
+    errors: {
+      requirePremium: "You need to be a premium member to do this.",
+    },
+    success: {
+      login: "Successfully logged in.",
+    },
+  },
+});
+```
+
+## Properties
+
+### errors
+
+An Object which contains all the error information.
+
+### errors.requirePremium
+
+A String which will be displayed to users trying to access a page that requires premium.
+
+### success
+
+An Object which contains all the success information.
+
+### success.login
+
+A String which will be displayed to users once logged in.

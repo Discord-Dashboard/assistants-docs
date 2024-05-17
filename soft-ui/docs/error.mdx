@@ -1,0 +1,70 @@
+---
+title: "Error"
+description: "An Object which contains all the error information."
+---
+
+```js
+theme: SoftUI({
+  error: {
+    error404: {
+      title: String,
+      subtitle: String,
+      description:
+        String,
+    },
+    dbdError: {
+      disableSecretMenu: Boolean,
+      secretMenuCombination: String[],
+    },
+  },
+});
+```
+
+## Example Usage
+
+```js
+theme: SoftUI({
+  error: {
+    error404: {
+      title: "Error 404",
+      subtitle: "Page Not Found",
+      description:
+        "It seems you have stumbled into the abyss. Click the button below to return to the dashboard",
+    },
+    dbdError: {
+      disableSecretMenu: false,
+      secretMenuCombination: ["69", "82", "82", "79", "82"],
+    },
+  },
+});
+```
+
+## Properties
+
+### error404
+
+An Object which contains all the error information.
+
+### error404.title
+
+A String which is the title of the error 404 page.
+
+### error404.subtitle
+
+A String which is the title of the error 404 page.
+
+### error404.description
+
+A String which is the description of the error 404 page.
+
+### dbdError
+
+An Object which contains all the error information.
+
+### dbdError.disableSecretMenu
+
+A Boolean which disables the secret keybind to view error information.
+
+### dbdError.secretMenuCombination
+
+An Array of keycodes inside of strings which are the combination to view error information.

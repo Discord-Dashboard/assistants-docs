@@ -1,0 +1,40 @@
+---
+title: "Date"
+---
+
+```
+SoftUI.formTypes.date(disabled),
+```
+
+| Argument | Type    | Description                                        |
+| -------- | ------- | -------------------------------------------------- |
+| disabled | Boolean | A boolean which shows if the date appears disabled |
+
+## Data required for getActualSet function
+
+Object, your date object.
+
+## Data returned
+
+Object | or null.
+
+## Example Usage
+
+```javascript
+{
+    optionId: "join_data",
+    optionName: "Join Date",
+    optionDescription: "At what time do you want me to join?",
+    optionType: SoftUI.formTypes.date(false),
+    getActualSet: ({guild}) => {
+      return timestamps[guild.id];
+    },
+    setNew: ({guild,newData}) => {
+      timestamps[guild.id] = newData;
+      return;
+    },
+},
+
+```
+
+<img height="200" src="/images/formtypes/softui-date.png" />

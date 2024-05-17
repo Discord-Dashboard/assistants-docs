@@ -1,0 +1,43 @@
+---
+title: "Roles Multiple Select"
+---
+
+```
+DBD.formTypes.rolesMultiSelect(disabled, required, includeBots, hideHigherRoles),
+
+```
+
+| Argument        | Type    | Description                                                                |
+| --------------- | ------- | -------------------------------------------------------------------------- |
+| disabled        | Boolean | Boolean check for if the roles select should be disabled or not.           |
+| required        | Boolean | Boolean check for if the roles select should be required or not.           |
+| includeBots     | Boolean | Boolean include bot roles.                                                 |
+| hideHigherRoles | Boolean | Hide roles that are positioned higher than the users and bots highest role |
+
+## Data required for getActualSet function
+
+Array of Strings (Roles IDs) | or an empty Array.
+
+## Data returned
+
+Array of Strings (Roles IDs) | or an empty Array.
+
+## Example Usage
+
+```javascript
+{
+    optionId: 'multiple_welcome_roles',
+    optionName: "Multiple Welcome Roles",
+    optionDescription: "Select multiple roles given to user on join.",
+    optionType: DBD.formTypes.rolesMultiSelect(false, true),
+    getActualSet: async ({guild}) => {
+        return welcomeRoles[guild.id] || []; // !
+    },
+    setNew: async ({guild,newData}) => {
+        welcomeRoles[guild.id] = newData;
+        return;
+    }
+},
+```
+
+<img height="200" src="/images/formtypes/dbd-rolesmultipleselect.png" />

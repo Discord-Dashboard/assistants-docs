@@ -1,0 +1,81 @@
+---
+title: "Sharding"
+description: "Soft-UI has a shards page built-in so if you use sharding you can publicly display statistics!"
+---
+
+## Dashboard Setup
+
+Place this code into the theme config and change the key to your own **SECURE** string.
+
+```js
+shardspage: {
+    enabled: true,
+    key: "place your key here!",
+},
+```
+
+## Bot Setup
+
+Install the NPM package on your **Sharding Manager**
+
+<CodeGroup>
+
+```bash npm
+npm install @dbd-soft-ui/shards
+```
+
+```bash yarn
+yarn add @dbd-soft-ui/shards
+```
+
+```bash pnpm
+pnpm add @dbd-soft-ui/shards
+```
+
+```bash bun
+bun add @dbd-soft-ui/shards
+```
+
+</CodeGroup>
+
+Almost done! Place this code into your ready event on the Sharding Manager or if using discord-hybrid-sharding, after spawning the clusters.
+
+```js
+const DSU = require("@dbd-soft-ui/shards");
+
+DSU.register(manager, {
+  dashboard_url: "your domain",
+  key: "your key",
+  interval: 15,
+});
+```
+
+It should look like this, except with your details:
+
+```js
+const DSU = require("@dbd-soft-ui/shards");
+
+DSU.register(manager, {
+  dashboard_url: String,
+  key: String,
+  interval: Number,
+});
+```
+
+If you want to adjust the interval of stats posting, just simply change the interval to as many seconds as you want.
+
+And we are done! Now just restart your dashboard and bot then the stats collection will begin.
+
+## Properties
+
+### dashboard_url
+
+A String with the url to your dashboard
+
+### key
+
+A String with the secret key from your dashboard,
+
+### interval
+
+A Number in seconds that the stats will be posted to your dashboard

@@ -87,14 +87,14 @@
       "group": "Form Types",
       "pages": [
         "dashboard/docs/formtypes/channels-select",
-        "dashboard/docs/formtypes/channels-multi-select",
+        "dashboard/docs/formtypes/channels-multiple-select",
         "dashboard/docs/formtypes/checkbox",
         "dashboard/docs/formtypes/color-select",
         "dashboard/docs/formtypes/embed-builder",
         "dashboard/docs/formtypes/input",
         "dashboard/docs/formtypes/multiple-select",
         "dashboard/docs/formtypes/roles-select",
-        "dashboard/docs/formtypes/roles-multi-select",
+        "dashboard/docs/formtypes/roles-multiple-select",
         "dashboard/docs/formtypes/select",
         "dashboard/docs/formtypes/spacer",
         "dashboard/docs/formtypes/switch",
@@ -106,19 +106,41 @@
       "pages": ["soft-ui/introduction"]
     },
     {
-      "group": "Theme Options",
+      "group": "Config",
+      "pages": ["soft-ui/docs/theme-maintenance", "soft-ui/docs/theme-404"]
+    },
+    {
+      "group": "Theme Config",
       "pages": [
         "soft-ui/docs/addons",
         "soft-ui/docs/admin",
         "soft-ui/docs/color-scheme",
         "soft-ui/docs/custom-theme-options",
+        "soft-ui/docs/commands",
+        "soft-ui/docs/database-driver",
+        "soft-ui/docs/error",
         "soft-ui/docs/footer",
         "soft-ui/docs/icons",
         "soft-ui/docs/index",
         "soft-ui/docs/locales",
+        "soft-ui/docs/log-handler",
+        "soft-ui/docs/meta",
+        "soft-ui/docs/preloader",
         "soft-ui/docs/premium",
+        "soft-ui/docs/sharding",
+        "soft-ui/docs/sidebar",
         "soft-ui/docs/support-email",
         "soft-ui/docs/website-name"
+      ]
+    },
+    {
+      "group": "Form Types",
+      "pages": [
+        "soft-ui/docs/formtypes/date",
+        "soft-ui/docs/formtypes/emoji-picker",
+        "soft-ui/docs/formtypes/number-picker",
+        "soft-ui/docs/formtypes/slider",
+        "soft-ui/docs/formtypes/tag-input"
       ]
     }
   ],

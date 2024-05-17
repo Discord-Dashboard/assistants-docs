@@ -21,3 +21,23 @@ Array, list of `valueReturned` to be selected.
 ## Data returned
 
 Array, list of selected `valueReturned` values | or an empty Array.
+
+## Example Usage
+
+```javascript
+{
+    optionId: 'multiselect',
+    optionName: "Multi Select",
+    optionDescription: "Select MultiValues",
+    optionType: DBD.formTypes.multiSelect({foo: 'bar', sam: 'ple', oh: 'oh', boo: 'oob'}, false, true),
+    getActualSet: async ({guild}) => {
+        return multiData[guild.id] || []; // !
+    },
+    setNew: async ({guild,newData}) => {
+        multiData[guild.id] = newData;
+        return;
+    }
+},
+```
+
+<img height="200" src="/images/formtypes/dbd-multiselect.png" />

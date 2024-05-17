@@ -1,0 +1,110 @@
+---
+title: "Embed Builder"
+---
+
+```
+DBD.formTypes.embedBuilder(defaultSettings),
+```
+
+| Argument        | Type   | Description                                                                       |
+| --------------- | ------ | --------------------------------------------------------------------------------- |
+| defaultSettings | Object | `{ username: string, avatarURL: string, defaultJson: {EMBED_BUILDER_Interface} }` |
+
+## Embed Builder Interface
+
+```typescript
+interface EmbedBuilder {
+  content: string;
+  embed: {
+    title?: string;
+    description?: string;
+    color?: string | number;
+    timestamp?: any;
+    url?: string;
+    author?: {
+      name?: string;
+      url?: string;
+      icon_url?: string;
+    };
+    thumbnail?: {
+      url?: string;
+    };
+    image?: {
+      url?: string;
+    };
+    footer?: {
+      text?: string;
+      icon_url?: string;
+    };
+    fields?: [EmbedBuilderField];
+  };
+}
+
+interface EmbedBuilderField {
+  name?: string;
+  value?: string;
+  inline?: boolean;
+}
+```
+
+## Data required for getActualSet function
+
+Object
+
+## Data returned
+
+Object
+
+## Example Usage
+
+```javascript
+{
+    optionId: 'welcome_embed',
+    optionName: "Welcome Embed",
+    optionDescription: "Build your own Welcome Embed!",
+    optionType: DBD.formTypes.embedBuilder({
+        username: null,
+        avatarURL: null,
+        defaultJson: {
+            content: "Did you know that if you don't know something, you don't know it? This riddle was solved by me. Don't thank me.",
+            embed: {
+                timestamp: new Date().toISOString(),
+                url: "https://discord.com",
+                description: "There was a boar, everyone liked a boar. One day the boar ate my dinner and escaped through the chimney. I haven't seen a boar since then.",
+                author: {
+                    name: "Assistants Center",
+                    url: "https://assistantscenter.com",
+                    icon_url: "https://media.discordapp.net/attachments/911644960590270484/934513385402413076/ac_fixed.png"
+                },
+                image: {
+                    url: "https://unsplash.it/380/200"
+                },
+                footer: {
+                    text: "Crated with Discord-Dashboard",
+                    icon_url: "https://cdn.discordapp.com/emojis/870635912437047336.png"
+                },
+                fields: [
+                    {
+                        name: "Hello",
+                        value: "Hi, Assistants Center loves you <:ac_love:806492057996230676>"
+                    },
+                    {
+                        name: "Do you know that",
+                        value: "You can use custom emojis there, even from server where bot isn't :Kekwlaugh:",
+                        inline: false
+                    },
+                ]
+            }
+        }
+    }),
+    getActualSet: async ({guild}) => {
+        return welcomeEmbed[guild.id];
+    },
+    setNew: async ({guild,newData}) => {
+        welcomeEmbed[guild.id] = newData || null;
+        return;
+    }
+},
+```
+
+<img height="200" src="/images/formtypes/dbd-embedbuilder.png" />

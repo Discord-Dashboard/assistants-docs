@@ -1,0 +1,42 @@
+---
+title: "Slider"
+---
+
+```
+SoftUI.formTypes.slider(min, max, step, disabled),
+```
+
+| Argument | Type    | Description                                          |
+| -------- | ------- | ---------------------------------------------------- |
+| min      | Number  | The minimum value of the number picker               |
+| max      | Number  | The maximum value of the number picker               |
+| step     | Number  | What value the slider should go up in                |
+| disabled | Boolean | A boolean which shows if the slider appears disabled |
+
+## Data required for getActualSet function
+
+Number
+
+## Data returned
+
+Number | or null
+
+## Example Usage
+
+```javascript
+{
+    optionId: "percentage_ram",
+    optionName: "Max RAM usage",
+    optionDescription: "At which RAM usage should I create an alert?",
+    optionType: SoftUI.formTypes.slider(0, 100, 1, false),
+    getActualSet: ({ guild }) => {
+      return alertRAM[guild.id];
+    },
+    setNew: ({ guild, newData }) => {
+      alertRAM[guild.id] = newData;
+      return;
+    },
+},
+```
+
+<img height="200" src="/images/formtypes/softui-slider.png" />

@@ -1,0 +1,53 @@
+---
+title: "Checkbox"
+---
+
+```
+DBD.formTypes.checkbox(disabled),
+```
+
+| Argument | Type    | Description                                                  |
+| -------- | ------- | ------------------------------------------------------------ |
+| disabled | Boolean | Boolean check for if the checkbox should be disabled or not. |
+
+## Data required for getActualSet function
+
+Boolean, to be checked or not.
+
+**Important:**
+
+Please note that `if(saved.state)` will return false if data is not set. If you want to default state to be true, use this:
+
+```javascript
+getActualSet: ({ guild, user }) => {
+  return SAVED_STATE == null || SAVED_STATE == undefined
+    ? DEFAULT_STATE
+    : SAVED_STATE;
+};
+```
+
+## Data returned
+
+Boolean, true if ckecked – false if unchecked.
+
+## Example Usage
+
+```javascript
+{
+    optionId: 'switch_coffee',
+    optionName: "Coffee switch",
+    optionDescription: "Do you want coffee to be sent daily to you?",
+    optionType: DBD.formTypes.checkbox(false),
+    getActualSet: async ({guild}) => {
+        const SAVED_STATE = checkboxData[guild.id];
+        const DEFAULT_STATE = true;
+        return (SAVED_STATE == null || SAVED_STATE == undefined) ? DEFAULT_STATE : SAVED_STATE;
+    },
+    setNew: async ({guild,newData}) => {
+        checkboxData[guild.id] = newData;
+        return;
+    }
+},
+```
+
+<img height="200" src="/images/formtypes/dbd-checkbox.png" />

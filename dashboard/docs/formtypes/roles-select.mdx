@@ -1,0 +1,41 @@
+---
+title: "Roles Select"
+---
+
+```
+DBD.formTypes.rolesSelect(disabled, includeBots, hideHigherRoles),
+```
+
+| Argument        | Type    | Description                                                                |
+| --------------- | ------- | -------------------------------------------------------------------------- |
+| disabled        | Boolean | Boolean check for if the roles select should be disabled or not.           |
+| includeBots     | Boolean | Boolean include bot roles.                                                 |
+| hideHigherRoles | Boolean | Hide roles that are positioned higher than the users and bots highest role |
+
+## Data required for getActualSet function
+
+String, role ID.
+
+## Data returned
+
+String, role ID | or null.
+
+## Example Usage
+
+```javascript
+{
+    optionId: 'welcome_role',
+    optionName: "Welcome role",
+    optionDescription: "Select role given to user on guild join.",
+    optionType: DBD.formTypes.rolesSelect(false),
+    getActualSet: async ({guild}) => {
+        return welcomeRole[guild.id];
+    },
+    setNew: async ({guild,newData}) => {
+        welcomeRole[guild.id] = newData;
+        return;
+    }
+},
+```
+
+<img height="200" src="/images/formtypes/dbd-rolesselect.png" />

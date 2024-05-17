@@ -1,0 +1,104 @@
+---
+title: "Commands"
+description: "An Array which is contains all categories and commands for the commands page."
+---
+
+```js
+theme: SoftUI({
+  commands: [
+    {
+      category: String,
+      subTitle: String,
+      categoryId: String,
+      image: String,
+      hideAlias?: Number, // Optional - Default: false - Hides the alias from all commands in the category
+      hideDescription?: Number, // Optional - Default: false - Hides the description from all commands in the category
+      hideSidebarItem?: Number, // Optional - Default: false - Hides the category from the sidebar
+      list: [
+        {
+          commandName: String,
+          commandUsage: String,
+          commandDescription: String,
+          commandAlias: String,
+        },
+      ],
+    },
+  ],
+});
+```
+
+## Example Usage
+
+```js
+theme: SoftUI({
+  commands: [
+    {
+      category: "category",
+      subTitle: "subTitle",
+      categoryId: "category-id", // No spaces or special characters
+      image: "<img src='link to image'>",
+      hideAlias: false, // Optional - Default: false - Hides the alias from all commands in the category
+      hideDescription: false, // Optional - Default: false - Hides the description from all commands in the category
+      hideSidebarItem: false, // Optional - Default: false - Hides the category from the sidebar
+      list: [
+        {
+          commandName: "cmdname",
+          commandUsage: "usage",
+          commandDescription: "Command description",
+          commandAlias: "alias",
+        },
+      ],
+    },
+  ],
+});
+```
+
+## Properties
+
+### category
+
+A String which is the name of the category.
+
+### subTitle
+
+A String which is the subtitle of the category.
+
+### categoryId
+
+A String which is the id of the category.
+
+### image
+
+A String which is the image of the category.
+
+### hideAlias
+
+A Boolean which hides the alias from all commands in the category.
+
+### hideDescription
+
+A Boolean which hides the description from all commands in the category.
+
+### hideSidebarItem
+
+A Boolean which hides the category from the sidebar.
+
+### list
+
+An Object which is a command.
+
+### list.commandName
+
+A String which is the name of the command.
+
+### list.commandUsage
+
+A String which is the usage of the command.
+
+### list.commandDescription
+
+A String which is the description of the command.
+
+### list.commandAlias
+
+A String which is the alias of the command.

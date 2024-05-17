@@ -1,0 +1,107 @@
+---
+title: "Theme Maintenance"
+---
+
+<Warning>
+  This **MUST** be placed into your DBD Config NOT your Theme Config!
+</Warning>
+
+```js
+useThemeMaintenance: Boolean,
+underMaintenance: {
+    title: String,
+    contentTitle: String,
+    texts: String[],
+
+    // Must contain 3 cards. All fields are optional - If card not wanted on maintenance page, infoCards can be deleted,
+    infoCards: [
+        {
+            title: String,
+            subtitle: String,
+            description: String
+        },
+        {
+            title: String,
+            subtitle: String,
+            description: String
+        },
+        {
+            title: String,
+            subtitle: String,
+            description: String
+        }
+    ],
+}
+```
+
+## Example Usage
+
+```js
+useThemeMaintenance: true,
+underMaintenance: {
+    title: "Under Maintenance",
+    contentTitle: "This page is under maintenance",
+    texts: [
+        "We still want to change for the better for you.",
+        "Therefore, we are introducing technical updates so that we can allow you to enjoy the quality of our services.",
+        "Come back to us later or join our Discord Support Server"
+    ],
+
+    // "Must contain 3 cards. All fields are optional - If card not wanted on maintenance page, infoCards can be deleted",
+    infoCards: [
+        {
+            title: "100+",
+            subtitle: "Over 100 commands!",
+            description: "Look at our commands during our downtime"
+        },
+        {
+            title: "500",
+            subtitle: "Text",
+            description: "Description here!"
+        },
+        {
+            title: "!",
+            subtitle: "Warning",
+            description: "Do you even have permission to be here?"
+        }
+    ],
+}
+```
+
+## Properties
+
+### useThemeMaintenance
+
+A Boolean which determines if the theme maintenance page should be used.
+
+### underMaintenance
+
+An Object which contains all the information for the maintenance page.
+
+### underMaintenance.title
+
+A String which is the title of the maintenance page.
+
+### underMaintenance.contentTitle
+
+A String which is the title of the content of the maintenance page.
+
+### underMaintenance.texts
+
+An Array of Strings which are the texts of the maintenance page.
+
+### underMaintenance.infoCards
+
+An Array of Objects which are the cards of the maintenance page.
+
+### underMaintenance.infoCards.title
+
+A String which is the title of the card.
+
+### underMaintenance.infoCards.subtitle
+
+A String which is the subtitle of the card.
+
+### underMaintenance.infoCards.description
+
+A String which is the description of the card.

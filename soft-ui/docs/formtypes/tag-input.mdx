@@ -1,0 +1,39 @@
+---
+title: "Tag Input"
+---
+
+```
+SoftUI.formTypes.tagInput(disabled),
+```
+
+| Argument | Type    | Description                                            |
+| -------- | ------- | ------------------------------------------------------ |
+| disabled | Boolean | A boolean which shows if the tagInput appears disabled |
+
+## Data required for getActualSet function
+
+Array of Strings | or an empty Array.
+
+## Data returned
+
+Array of Strings | or an empty Array.
+
+## Example Usage
+
+```javascript
+{
+    optionId: "allowed_tags",
+    optionName: "Allowed Tags",
+    optionDescription: "Which tags are allowed?",
+    optionType: SoftUI.formTypes.tagInput(false),
+    getActualSet: ({ guild }) => {
+      return allowedTags[guild.id];
+    },
+    setNew: ({ guild, newData }) => {
+      allowedTags[guild.id] = newData;
+      return;
+    },
+},
+```
+
+<img height="200" src="/images/formtypes/softui-tags.png" />
