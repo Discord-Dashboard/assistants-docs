@@ -25,16 +25,16 @@ theme: SoftUI({
 })
 ```
 
-## Properties
+## Props
 
-### image
+<ParamField path="image" type="string">
+  The image for the preloader
+</ParamField>
 
-A String which sets the image for the preloader.
+<ParamField path="spinner" type="boolean" required>
+  Disables the image and displays a spinner instead
+</ParamField>
 
-### spinner
-
-A Boolean which disables the image and displays a spinner instead.
-
-### text
-
-A String which sets the text for the preloader.
+<ParamField path="text" type="string" required>
+  The text for the preloader
+</ParamField>

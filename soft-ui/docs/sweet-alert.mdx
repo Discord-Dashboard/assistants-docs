@@ -31,20 +31,20 @@ theme: SoftUI({
 });
 ```
 
-## Properties
+## Props
 
-### errors
+<ResponseField name="errors" type="Object" required>
+  <Expandable title="properties" defaultOpen>
+    <ResponseField name="requirePremium" type="string" required>
+      The error message for premium users
+    </ResponseField>
+  </Expandable>
+</ResponseField>
 
-An Object which contains all the error information.
-
-### errors.requirePremium
-
-A String which will be displayed to users trying to access a page that requires premium.
-
-### success
-
-An Object which contains all the success information.
-
-### success.login
-
-A String which will be displayed to users once logged in.
+<ResponseField name="success" type="Object" required>
+  <Expandable title="properties" defaultOpen>
+    <ResponseField name="login" type="string" required>
+      The success message for logged in users
+    </ResponseField>
+  </Expandable>
+</ResponseField>

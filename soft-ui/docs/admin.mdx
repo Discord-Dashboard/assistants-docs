@@ -31,24 +31,21 @@ theme: SoftUI({
 });
 ```
 
-## Properties
+## Props
 
-### pterodactyl
-
-An Object which contains all the information for the pterodactyl section of the admin page.
-
-### pterodactyl.enabled
-
-A Boolean which disables the pterodactyl section.
-
-### pterodactyl.apiKey
-
-A String which is the API key for the pterodactyl panel. This MUST be a client api-key, found at /account/api
-
-### pterodactyl.panelLink
-
-A String which is the link for the pterodactyl panel.
-
-### pterodactyl.serverUUIDs
-
-An Array which is the UUID for every server you wish to control.
+<ResponseField name="pterodactyl" type="Object" required>
+  <Expandable title="properties" defaultOpen>
+    <ResponseField name="enabled" type="boolean" required>
+      Indicate if the pterodactyl section should be enabled
+    </ResponseField>
+    <ResponseField name="apiKey" type="string">
+      The API key for the pterodactyl panel
+    </ResponseField>
+    <ResponseField name="panelLink" type="string">
+      Link to your pterodactyl panel
+    </ResponseField>
+    <ResponseField name="serverUUIDs" type="string[]">
+      UUIDs of the servers you wish to control
+    </ResponseField>
+  </Expandable>
+</ResponseField>

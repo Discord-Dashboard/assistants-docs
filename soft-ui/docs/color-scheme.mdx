@@ -41,3 +41,20 @@ theme: SoftUI({
   },
 });
 ```
+
+## Props
+
+<ParamField path="colorScheme" type="string" required>
+  The color scheme of the website
+</ParamField>
+
+<ResponseField name="themeColors" type="Object">
+  <Expandable title="properties" defaultOpen>
+    <ResponseField name="primaryColor" type="string" required>
+      The primary color of the website as HEX code
+    </ResponseField>
+    <ResponseField name="secondaryColor" type="string">
+      The secondary color of the website as HEX code
+    </ResponseField>
+  </Expandable>
+</ResponseField>

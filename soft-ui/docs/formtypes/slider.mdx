@@ -6,12 +6,21 @@ title: "Slider"
 SoftUI.formTypes.slider(min, max, step, disabled),
 ```
 
-| Argument | Type    | Description                                          |
-| -------- | ------- | ---------------------------------------------------- |
-| min      | Number  | The minimum value of the number picker               |
-| max      | Number  | The maximum value of the number picker               |
-| step     | Number  | What value the slider should go up in                |
-| disabled | Boolean | A boolean which shows if the slider appears disabled |
+<ParamField path="min" type="number" required>
+  The minimum value of the slider
+</ParamField>
+
+<ParamField path="disabled" type="number" required>
+  The maximum value of the slider
+</ParamField>
+
+<ParamField path="step" type="number" required>
+  What value the slider should go up in
+</ParamField>
+
+<ParamField path="disabled" type="boolean" required>
+  Indicate if the slider should be shown as disabled
+</ParamField>
 
 ## Data required for getActualSet function
 

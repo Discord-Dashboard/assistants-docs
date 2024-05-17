@@ -36,32 +36,28 @@ theme: SoftUI({
 });
 ```
 
-## Properties
+## Props
 
-### title
+<ParamField path="title" type="string" required>
+  The title of the blacklisted page
+</ParamField>
+<ParamField path="subtitle" type="string" required>
+  The subtitle of the blacklisted page
+</ParamField>
+<ParamField path="description" type="string" required>
+  The description of the blacklisted page
+</ParamField>
 
-A String which sets the title of the blacklisted page.
-
-### subtitle
-
-A String which sets the subtitle of the blacklisted page.
-
-### description
-
-A String which sets the description of the blacklisted page.
-
-### button
-
-An Object which contains all the information for the blacklisted button.
-
-### button.enabled
-
-A Boolean which enables the button.
-
-### button.text
-
-A String which sets the text of the button.
-
-### button.link
-
-A String which sets the link of the button.
+<ResponseField name="button" type="Object" required>
+  <Expandable title="properties" defaultOpen>
+    <ResponseField name="enabled" type="boolean" required>
+      Indicate if the button should be enabled
+    </ResponseField>
+    <ResponseField name="text" type="string">
+      The text of the button
+    </ResponseField>
+    <ResponseField name="link" type="string">
+      The link of the button
+    </ResponseField>
+  </Expandable>
+</ResponseField>

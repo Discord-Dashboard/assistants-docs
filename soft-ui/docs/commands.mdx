@@ -11,9 +11,9 @@ theme: SoftUI({
       subTitle: String,
       categoryId: String,
       image: String,
-      hideAlias?: Number, // Optional - Default: false - Hides the alias from all commands in the category
-      hideDescription?: Number, // Optional - Default: false - Hides the description from all commands in the category
-      hideSidebarItem?: Number, // Optional - Default: false - Hides the category from the sidebar
+      hideAlias: Number, // Optional - Default: false - Hides the alias from all commands in the category
+      hideDescription: Number, // Optional - Default: false - Hides the description from all commands in the category
+      hideSidebarItem: Number, // Optional - Default: false - Hides the category from the sidebar
       list: [
         {
           commandName: String,
@@ -53,52 +53,43 @@ theme: SoftUI({
 });
 ```
 
-## Properties
+## Props
 
-### category
+<ParamField path="category" type="string" required>
+  The name of the category
+</ParamField>
+<ParamField path="subTitle" type="string" required>
+  The subtitle of the category
+</ParamField>
+<ParamField path="categoryId" type="string" required>
+  Unique id of the category
+</ParamField>
+<ParamField path="image" type="string" required>
+  URL of the image
+</ParamField>
+<ParamField path="hideAlias" type="boolean">
+  Hides the alias from all commands in the category
+</ParamField>
+<ParamField path="hideDescription" type="boolean">
+  Hides the description from all commands in the category
+</ParamField>
+<ParamField path="hideSidebarItem" type="boolean">
+  Hides the category from the sidebar
+</ParamField>
 
-A String which is the name of the category.
-
-### subTitle
-
-A String which is the subtitle of the category.
-
-### categoryId
-
-A String which is the id of the category.
-
-### image
-
-A String which is the image of the category.
-
-### hideAlias
-
-A Boolean which hides the alias from all commands in the category.
-
-### hideDescription
-
-A Boolean which hides the description from all commands in the category.
-
-### hideSidebarItem
-
-A Boolean which hides the category from the sidebar.
-
-### list
-
-An Object which is a command.
-
-### list.commandName
-
-A String which is the name of the command.
-
-### list.commandUsage
-
-A String which is the usage of the command.
-
-### list.commandDescription
-
-A String which is the description of the command.
-
-### list.commandAlias
-
-A String which is the alias of the command.
+<ResponseField name="list" type="Array" required>
+  <Expandable title="properties" defaultOpen>
+    <ResponseField name="commandName" type="string" required>
+      The name of the command
+    </ResponseField>
+    <ResponseField name="commandUsage" type="string" required>
+      The usage of the command
+    </ResponseField>
+    <ResponseField name="commandDescription" type="string" required>
+      The description of the command
+    </ResponseField>
+    <ResponseField name="commandAlias" type="string" required>
+      The alias of the command
+    </ResponseField>
+  </Expandable>
+</ResponseField>

@@ -66,16 +66,29 @@ If you want to adjust the interval of stats posting, just simply change the inte
 
 And we are done! Now just restart your dashboard and bot then the stats collection will begin.
 
-## Properties
+## Props
 
-### dashboard_url
+<ResponseField name="shardspage" type="Object" required>
+  <Expandable title="properties" defaultOpen>
+    <ResponseField name="enabled" type="boolean" required>
+      Indicate if the shardspage should be enabled
+    </ResponseField>
+    <ResponseField name="key" type="string" required>
+      The secret key from your dashboard
+    </ResponseField>
+  </Expandable>
+</ResponseField>
 
-A String with the url to your dashboard
-
-### key
-
-A String with the secret key from your dashboard,
-
-### interval
-
-A Number in seconds that the stats will be posted to your dashboard
+<ResponseField name="register" type="Object" required>
+  <Expandable title="properties" defaultOpen>
+    <ResponseField name="dashboard_url" type="string" required>
+      The url of your dashboard
+    </ResponseField>
+    <ResponseField name="key" type="string" required>
+      The secret key from your dashboard
+    </ResponseField>
+    <ResponseField name="interval" type="number" required>
+      The interval in seconds
+    </ResponseField>
+  </Expandable>
+</ResponseField>

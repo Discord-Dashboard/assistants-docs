@@ -114,9 +114,10 @@
       "pages": [
         "soft-ui/docs/addons",
         "soft-ui/docs/admin",
+        "soft-ui/docs/blacklisted",
         "soft-ui/docs/color-scheme",
-        "soft-ui/docs/custom-theme-options",
         "soft-ui/docs/commands",
+        "soft-ui/docs/custom-theme-options",
         "soft-ui/docs/database-driver",
         "soft-ui/docs/error",
         "soft-ui/docs/footer",
@@ -130,6 +131,7 @@
         "soft-ui/docs/sharding",
         "soft-ui/docs/sidebar",
         "soft-ui/docs/support-email",
+        "soft-ui/docs/sweet-alert",
         "soft-ui/docs/website-name"
       ]
     },

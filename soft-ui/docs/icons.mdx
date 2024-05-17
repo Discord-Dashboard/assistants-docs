@@ -44,51 +44,39 @@ theme: SoftUI({
 });
 ```
 
-## Properties
+## Props
 
-### backgroundImage
+<ResponseField name="backgroundImage" type="string" required>
+  The background image of the website
+</ResponseField>
 
-A String which is the background image on the settings page of the guilds.
+<ResponseField name="favicon" type="string" required>
+  The favicon of the website
+</ResponseField>
 
-### favicon
+<ResponseField name="noGuildIcon" type="string" required>
+  The image of a guild with no icon
+</ResponseField>
 
-A String which is the favicon of the website.
-
-### noGuildIcon
-
-A String which is the image of a guild with no icon.
-
-### sidebar
-
-An Object which contains the sidebar information.
-
-### sidebar.darkUrl
-
-A String which is the icon of the website when using dark mode.
-
-### sidebar.lightUrl
-
-A String which is the icon of the website when using light mode.
-
-### sidebar.hideName
-
-A Boolean which is whether you'd like to hide the website name next to the icon.
-
-### sidebar.borderRadius
-
-A Boolean which is whether you'd like to set the border radius of the icon.
-
-If you wish to set the border radius of the icon, you can do so by setting this to the size instead of a Boolean.
-
-```js
-theme: SoftUI({
-  icons: {
-    sidebar: {
-      borderRadius: "10px",
-    },
-  },
-});
-```
+<ResponseField name="sidebar" type="Object" required>
+  <Expandable title="properties" defaultOpen>
+    <ResponseField name="darkUrl" type="string" required>
+      The icon of the website when using dark mode
+    </ResponseField>
+    <ResponseField name="lightUrl" type="string" required>
+      The icon of the website when using light mode
+    </ResponseField>
+    <ResponseField name="hideName" type="boolean" required>
+      Whether you'd like to hide the website name next to the icon
+    </ResponseField>
+    <ResponseField name="borderRadius" type="boolean | number" required>
+      Whether you'd like to set the border radius of the icon
+    </ResponseField>
+    <ResponseField name="alignCenter" type="boolean" required>
+      Whether you'd like to align the icon to the center
+    </ResponseField>
+  </Expandable>
+</ResponseField>
 
 If you want to disable the border radius, you can do so by setting this to false.
 
@@ -101,7 +89,3 @@ theme: SoftUI({
   },
 });
 ```
-
-### sidebar.alignCenter
-
-A Boolean which is whether you'd like the icon to be centered on the sidebar.

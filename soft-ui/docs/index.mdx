@@ -33,28 +33,24 @@ theme: SoftUI({
 });
 ```
 
-## Properties
+## Props
 
-### graph
-
-An Object which contains the information for the graph.
-
-### graph.enabled
-
-A Boolean which enables the graph.
-
-### graph.lineGraph
-
-A Boolean which changes the graph to a line graph.
-
-### graph.title
-
-A String which changes the title of the graph.
-
-### graph.tag
-
-A String which changes the tag of the graph.
-
-### graph.max
-
-A Number which changes the max of the graph.
+<ResponseField name="graph" type="Object" required>
+  <Expandable title="properties" defaultOpen>
+    <ResponseField name="enabled" type="boolean" required>
+      Indicate if the graph should be enabled
+    </ResponseField>
+    <ResponseField name="lineGraph" type="boolean">
+      Indicate if the graph should be a line graph
+    </ResponseField>
+    <ResponseField name="title" type="string">
+      The title of the graph
+    </ResponseField>
+    <ResponseField name="tag" type="string">
+      The tag of the graph
+    </ResponseField>
+    <ResponseField name="max" type="number">
+      The max of the graph
+    </ResponseField>
+  </Expandable>
+</ResponseField>

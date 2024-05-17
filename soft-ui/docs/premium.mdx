@@ -40,36 +40,32 @@ theme: SoftUI({
 });
 ```
 
-## Properties
+## Props
 
-### enabled
+<ResponseField name="enabled" type="boolean" required>
+  Indicate if the premium card should be enabled
+</ResponseField>
 
-A Boolean which changes whether or not the premium card is enabled.
-
-### card
-
-An Object which contains all the premium card information.
-
-### card.title
-
-A String which changes the card title.
-
-### card.description
-
-A String which changes the card description.
-
-### card.bgImage
-
-A String which is an image URL that changes the card background URL.
-
-### card.button
-
-An Object which contains the information for the button.
-
-### card.button.text
-
-A String which will change the button text.
-
-### card.button.url
-
-A String which will change the link of the button.
+<ResponseField name="card" type="Object">
+  <Expandable title="properties" defaultOpen>
+    <ResponseField name="title" type="string" required>
+      The title of the premium card
+    </ResponseField>
+    <ResponseField name="description" type="string" required>
+      The description of the premium card
+    </ResponseField>
+    <ResponseField name="bgImage" type="string" required>
+      The background image of the premium card
+    </ResponseField>
+    <ResponseField name="button" type="Object" required>
+      <Expandable title="properties" defaultOpen>
+        <ResponseField name="text" type="string" required>
+          The text of the button
+        </ResponseField>
+        <ResponseField name="url" type="string" required>
+          The link of the button
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>

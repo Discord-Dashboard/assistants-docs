@@ -39,32 +39,29 @@ theme: SoftUI({
 });
 ```
 
-## Properties
+## Props
 
-### error404
+<ResponseField name="error404" type="Object">
+  <Expandable title="properties" defaultOpen>
+    <ResponseField name="title" type="string" required>
+      The title of the error 404 page
+    </ResponseField>
+    <ResponseField name="subtitle" type="string" required>
+      The subtitle of the error 404 page
+    </ResponseField>
+    <ResponseField name="description" type="string" required>
+      The description shown on the error 404 page
+    </ResponseField>
+  </Expandable>
+</ResponseField>
 
-An Object which contains all the error information.
-
-### error404.title
-
-A String which is the title of the error 404 page.
-
-### error404.subtitle
-
-A String which is the title of the error 404 page.
-
-### error404.description
-
-A String which is the description of the error 404 page.
-
-### dbdError
-
-An Object which contains all the error information.
-
-### dbdError.disableSecretMenu
-
-A Boolean which disables the secret keybind to view error information.
-
-### dbdError.secretMenuCombination
-
-An Array of keycodes inside of strings which are the combination to view error information.
+<ResponseField name="dbdError" type="Object">
+  <Expandable title="properties" defaultOpen>
+    <ResponseField name="disableSecretMenu" type="boolean" required>
+      Indicate if the secret keybind should be disabled
+    </ResponseField>
+    <ResponseField name="secretMenuCombination" type="string[]" required>
+      The key combination to view the secret menu
+    </ResponseField>
+  </Expandable>
+</ResponseField>

@@ -29,20 +29,18 @@ theme: SoftUI({
 });
 ```
 
-## Properties
+## Props
 
-### gestures
-
-An Object which contains all the sidebar information.
-
-### gestures.disabled
-
-A Boolean which will disable the swipe gestures on the sidebar.
-
-### gestures.gestureTimer
-
-A Number in milliseconds which will change how long the gesture lasts for.
-
-### gestures.gestureSensitivity
-
-A Number in pixels that the user must swipe before the gesture is visible.
+<ResponseField name="gestures" type="Object" required>
+  <Expandable title="properties" defaultOpen>
+    <ResponseField name="disabled" type="boolean" required>
+      Indicate if the sidebar should be disabled
+    </ResponseField>
+    <ResponseField name="gestureTimer" type="number">
+      The gesture timer in milliseconds
+    </ResponseField>
+    <ResponseField name="gestureSensitivity" type="number">
+      The gesture sensitivity in pixels
+    </ResponseField>
+  </Expandable>
+</ResponseField>
