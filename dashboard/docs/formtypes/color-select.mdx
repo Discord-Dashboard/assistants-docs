@@ -6,10 +6,12 @@ title: "Color Select"
 DBD.formTypes.colorSelect(defaultState, disabled),
 ```
 
-| Argument     | Type    | Description                                                      |
-| ------------ | ------- | ---------------------------------------------------------------- |
-| defaultState | String  | Default state HEX color.                                         |
-| disabled     | Boolean | Boolean check for if the color select should be disabled or not. |
+<ParamField path="defaultState" type="string" required>
+  Default state HEX color.
+</ParamField>
+<ParamField path="disabled" type="boolean" required>
+  Indicate if the select should be disabled or not.
+</ParamField>
 
 ## Data required for getActualSet function
 

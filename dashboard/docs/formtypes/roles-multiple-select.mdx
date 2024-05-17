@@ -7,12 +7,21 @@ DBD.formTypes.rolesMultiSelect(disabled, required, includeBots, hideHigherRoles)
 
 ```
 
-| Argument        | Type    | Description                                                                |
-| --------------- | ------- | -------------------------------------------------------------------------- |
-| disabled        | Boolean | Boolean check for if the roles select should be disabled or not.           |
-| required        | Boolean | Boolean check for if the roles select should be required or not.           |
-| includeBots     | Boolean | Boolean include bot roles.                                                 |
-| hideHigherRoles | Boolean | Hide roles that are positioned higher than the users and bots highest role |
+<ParamField path="disabled" type="boolean" required>
+  Indicate if the select should be disabled or not.
+</ParamField>
+
+<ParamField path="required" type="boolean" required>
+  Indicate if the multiple select should be required or not.
+</ParamField>
+
+<ParamField path="includeBots" type="boolean">
+  Indicate if the bot roles should be included or not.
+</ParamField>
+
+<ParamField path="hideHigherRoles" type="boolean">
+  Indicate if the higher roles should be hidden or not.
+</ParamField>
 
 ## Data required for getActualSet function
 

@@ -3,14 +3,20 @@ title: "Multiple Select"
 ---
 
 ```
-DBD.formTypes.multiSelect(list, disabled, required),,
+DBD.formTypes.multiSelect(list, disabled, required),
 ```
 
-| Argument | Type    | Description                                                                                |
-| -------- | ------- | ------------------------------------------------------------------------------------------ |
-| list     | Object  | Array presented as follows: `{ displayName: valueReturned, displayName2: valueReturned2 }` |
-| disabled | Boolean | Boolean check for if the select should be disabled or not.                                 |
-| required | Boolean | Boolean check for if the select should be required or not.                                 |
+<ParamField path="list" type="object" required>
+    Available values: `{ displayName: valueReturned, displayName2: valueReturned2 }`
+</ParamField>
+
+<ParamField path="disabled" type="boolean" required>
+  Indicate if the select should be disabled or not.
+</ParamField>
+
+<ParamField path="required" type="boolean" required>
+  Indicate if the select should be required or not.
+</ParamField>
 
 ## Data required for getActualSet function
 

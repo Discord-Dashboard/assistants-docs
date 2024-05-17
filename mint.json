@@ -86,15 +86,15 @@
     {
       "group": "Form Types",
       "pages": [
-        "dashboard/docs/formtypes/channels-select",
         "dashboard/docs/formtypes/channels-multiple-select",
+        "dashboard/docs/formtypes/channels-select",
         "dashboard/docs/formtypes/checkbox",
         "dashboard/docs/formtypes/color-select",
         "dashboard/docs/formtypes/embed-builder",
         "dashboard/docs/formtypes/input",
         "dashboard/docs/formtypes/multiple-select",
-        "dashboard/docs/formtypes/roles-select",
         "dashboard/docs/formtypes/roles-multiple-select",
+        "dashboard/docs/formtypes/roles-select",
         "dashboard/docs/formtypes/select",
         "dashboard/docs/formtypes/spacer",
         "dashboard/docs/formtypes/switch",

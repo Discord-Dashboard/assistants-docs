@@ -6,13 +6,25 @@ title: "Channels Select"
 DBD.formTypes.channelsSelect(disabled, channelTypes = [ChannelType.GuildText], hideNSW, onlyNSFW, hideNoAccess),),
 ```
 
-| Argument     | Type    | Description                                                              |
-| ------------ | ------- | ------------------------------------------------------------------------ |
-| disabled     | Boolean | Boolean check for if the channels select should be disabled or not.      |
-| channelTypes | Array   | An Array (!) of types of channels to be included in the channels select. |
-| hideNSW      | Boolean | Boolean check for if the NSFW channels should be hidden or not.          |
-| onlyNSFW     | Boolean | Boolean check for if the only NSFW channels should be shown or not.      |
-| hideNoAccess | Boolean | Boolean check for if the no access channels should be hidden or not.     |
+<ParamField path="disabled" type="boolean" required>
+  Indicate if the select should be disabled or not.
+</ParamField>
+
+<ParamField path="channelTypes" type="array" required>
+  Types of channels that should be included in the select.
+</ParamField>
+
+<ParamField path="hideNSW" type="boolean">
+  Indicate if the NSFW channels should be hidden or not.
+</ParamField>
+
+<ParamField path="onlyNSFW" type="boolean">
+  Indicate if the only NSFW channels should be shown or not.
+</ParamField>
+
+<ParamField path="hideNoAccess" type="boolean">
+  Indicate if the no access channels should be hidden or not.
+</ParamField>
 
 ## Data required for getActualSet function
 

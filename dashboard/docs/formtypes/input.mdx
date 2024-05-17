@@ -6,13 +6,21 @@ title: "Input"
 DBD.formTypes.input(placeholder, min, max, disabled, required),
 ```
 
-| Argument    | Type    | Description                                               |
-| ----------- | ------- | --------------------------------------------------------- |
-| placeholder | String  | Input placeholder.                                        |
-| min         | Number  | Minimum length.                                           |
-| max         | Number  | Maximum length.                                           |
-| disabled    | Boolean | Boolean check for if the input should be disabled or not. |
-| required    | Boolean | Boolean check for if the input should be required or not. |
+<ParamField path="placeholder" type="string" required>
+  Input placeholder.
+</ParamField>
+<ParamField path="min" type="number" required>
+  Minimum length.
+</ParamField>
+<ParamField path="max" type="number" required>
+  Maximum length.
+</ParamField>
+<ParamField path="disabled" type="boolean" required>
+  Indicate if the input should be disabled or not.
+</ParamField>
+<ParamField path="required" type="boolean" required>
+  Indicate if the input should be required or not.
+</ParamField>
 
 ## Data required for getActualSet function
 
