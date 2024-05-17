@@ -1,0 +1,40 @@
+---
+title: "SSL"
+description: "If you want to use the https protocol, you must provide us with a certificate and an SSL key String. This can also be `fs.readFileSync`."
+---
+
+```js
+new DBD.Dashboard({
+  ssl: {
+    enabled: Boolean,
+    key: String,
+    cert: String,
+  },
+});
+```
+
+## Example Usage
+
+```javascript
+new DBD.Dashboard({
+  ssl: {
+    enabled: true,
+    key: fs.readFileSync("key.pem"),
+    cert: fs.readFileSync("cert.pem"),
+  },
+});
+```
+
+## Props
+
+<ParamField path="enabled" type="boolean" required>
+  Indicate if SSL should be enabled or not.
+</ParamField>
+
+<ParamField path="key" type="string" required>
+  Path to the ssl key file
+</ParamField>
+
+<ParamField path="cert" type="string" required>
+  Path to the ssl cert file
+</ParamField>

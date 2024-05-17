@@ -1,0 +1,55 @@
+---
+title: "Dashboard Settings"
+sidebarTitle: "Settings"
+---
+
+Dashboard settings are simply a complex list of options that the user will be able to change in it. Our module allows the user to divide settings into categories, so this list should contain a category object. The category object itself also contains a list of settings for the category.
+
+```javascript
+new DBD.Dashboard({
+  settings: [categoryObject, categoryObject],
+});
+```
+
+See more about [categories](/essentials/categories.mdx) and [options](/essentials/options.mdx)
+
+## Example Usage
+
+```javascript
+new DBD.Dashboard({
+  settings: [
+    {
+        categoryId: 'input',
+        categoryName: 'New Category',
+        categoryImageURL: 'URL To image',
+        categoryDescription: "Setup your bot with default settings!"
+        toggleable: true,
+        getActualSet: async ({ guild }) => {
+          return settings['toggleeco'];
+        },
+        setNew: async ({ guild, newData }) => {
+          settings['toggleeco'] = newData;
+        },
+        categoryOptionsList: [
+            {
+                optionId: 'prefix',
+                optionName: "Prefix",
+                optionDescription: "Set bot prefix.",
+                optionType: DBD.formTypes.input('Prefix', 1, 4, false, false),
+                getActualSet: async ({guild}) => {
+                    return prefixData[guild.id] || '!';
+                },
+                setNew: async ({guild,newData}) => {
+                    prefixData[guild.id] = newData || '!';
+                    return;
+                }
+            },
+        ]
+    },
+  ],
+});
+```
+
+<ParamField path="settings" type="categoryObject[]" required>
+  An array of category objects.
+</ParamField>

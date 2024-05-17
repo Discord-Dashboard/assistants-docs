@@ -1,0 +1,71 @@
+---
+title: "Rate Limits"
+description: "The Dashboard allows you to add RateLimits for important endpoints. This allows you to protect against server load in the event of a DDOS attack on the server."
+---
+
+The Dashboard allows you to add RateLimits in 4 places, and doing so is trivially easy:
+
+```js
+new DBD.Dashboard({
+  rateLimits: {
+    manage: RateLimitSettingsObject,
+    guildPage: RateLimitSettingsObject,
+    settingsUpdatePostAPI: RateLimitSettingsObject,
+    discordOAuth2: RateLimitSettingsObject,
+  },
+});
+```
+
+## Example Usage
+
+```javascript
+new DBD.Dashboard({
+  rateLimits: {
+    manage: {
+      windowMs: 15 * 60 * 1000, // 15 minutes
+      max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
+      message: "Sorry, you are ratelimited!", // Message returned if user should be rate limited, could be also JSON/HTML
+      store: null, // <Rate Limiter Store> - if null, new MemoryStore()
+      // supported stores: https://www.npmjs.com/package/express-rate-limit#store
+    },
+  },
+});
+```
+
+<ParamField path="manage" type="RateLimitSettingsObject" required>
+  Manage Guilde Page Rate Limits Object
+</ParamField>
+
+<ParamField path="guildPage" type="RateLimitSettingsObject" required>
+  Guild Page Rate Limits Object
+</ParamField>
+
+<ParamField
+  path="settingsUpdatePostAPI"
+  type="RateLimitSettingsObject"
+  required
+>
+  Settings Update Post API Rate Limits Object
+</ParamField>
+
+<ParamField path="discordOAuth2" type="RateLimitSettingsObject" required>
+  Discord OAuth2 Rate Limits Object
+</ParamField>
+
+<ResponseField name="RateLimitSettingsObject" type="Object">
+  <Expandable title="properties" defaultOpen>
+    <ResponseField name="windowMs" type="number" required>
+      Time in milliseconds
+    </ResponseField>
+    <ResponseField name="max" type="number" required>
+      Max number of requests
+    </ResponseField>
+    <ResponseField name="message" type="string" required>
+      Message to show to a rate-limited user
+    </ResponseField>
+    <ResponseField name="store" type="object" required>
+      Rate Limiter Store. See
+      https://www.npmjs.com/package/express-rate-limit#store
+    </ResponseField>
+  </Expandable>
+</ResponseField>

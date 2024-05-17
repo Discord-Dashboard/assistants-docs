@@ -1,0 +1,34 @@
+---
+title: "Support Server"
+description: "Create an endpoint containing a link with an invitation to your Discord Support server."
+---
+
+```js
+new DBD.Dashboard({
+  supportServer: {
+    slash: String,
+    inviteUrl: String,
+  },
+});
+```
+
+## Example Usage
+
+```javascript
+new DBD.Dashboard({
+  supportServer: {
+    slash: "/support",
+    inviteUrl: "https://discord.gg/invite",
+  },
+});
+```
+
+## Props
+
+<ParamField path="slash" type="string" required>
+  The url for the invite endpoint
+</ParamField>
+
+<ParamField path="inviteUrl" type="string" required>
+  The invite url of the endpoint.
+</ParamField>

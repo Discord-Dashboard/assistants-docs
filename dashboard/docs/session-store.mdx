@@ -1,0 +1,29 @@
+---
+title: "Session Store"
+description: "Store your session and keep you from logging in every time."
+---
+
+```js
+new DBD.Dashboard({
+    sessionStore: Object<ExpressSessionStoreModule>,
+});
+```
+
+## Example Usage
+
+```javascript
+new DBD.Dashboard({
+  sessionStore: expressSessionStore,
+});
+```
+
+## Props
+
+<ParamField
+  path="sessionStore"
+  type="object ExpressSessionStoreModule"
+  required
+>
+  Express.js session store module, for example 'session-file-store', or
+  'connect-mongodb-session', etc.
+</ParamField>

@@ -1,0 +1,26 @@
+---
+title: "Storage"
+description: "An Object which contains all the information for the storage."
+---
+
+```js
+theme: SoftUI({
+  storage: Object<DBD.Handler>,
+});
+```
+
+See more about [storage handlers](/essentials/storage-handlers.mdx)
+
+## Example Usage
+
+```js
+theme: SoftUI({
+  storage: Handler,
+});
+```
+
+## Props
+
+<ParamField path="storage" type="object DBD.Handler" required>
+  The storage handler
+</ParamField>

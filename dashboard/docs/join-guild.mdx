@@ -1,0 +1,35 @@
+---
+title: "Join Guild After Authorization"
+description: "Automatically add a user to your Discord Server where the bot is when they log into the Dashboard."
+---
+
+```js
+new DBD.Dashboard({
+  guildAfterAuthorization: {
+    use: Boolean,
+    guildId: String,
+  },
+});
+```
+
+## Example Usage
+
+```javascript
+new DBD.Dashboard({
+  guildAfterAuthorization: {
+    use: true,
+    guildId: "GUILD_ID",
+  },
+});
+```
+
+## Props
+
+<ParamField path="use" type="boolean" required>
+  If you want to automatically add a user to your Discord Server where the bot
+  is when they log into the Dashboard.
+</ParamField>
+
+<ParamField path="guildId" type="string" required>
+  The ID of the guild to add the user to.
+</ParamField>

@@ -1,0 +1,26 @@
+---
+title: "Efficient Saving System"
+description: "Use a modified version of the save system to save all settings at once, rather than save each option individually."
+---
+
+```js
+new DBD.Dashboard({
+  useCategorySet: Boolean,
+});
+```
+
+By enabling this, you must make some changes to your settings. See [this guide](/essentials/efficient-saving) for more information.
+
+## Example Usage
+
+```javascript
+new DBD.Dashboard({
+  useCategorySet: true,
+});
+```
+
+## Props
+
+<ParamField path="useCategorySet" type="boolean" required>
+  If you want to use the efficient saving system.
+</ParamField>

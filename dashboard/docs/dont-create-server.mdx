@@ -1,0 +1,24 @@
+---
+title: "Don't Create Server"
+description: "Do not create and don't listen an express http/-s server for Dashboard."
+---
+
+```js
+new DBD.Dashboard({
+  noCreateServer: Boolean,
+});
+```
+
+## Example Usage
+
+```javascript
+new DBD.Dashboard({
+  noCreateServer: true,
+});
+```
+
+## Props
+
+<ParamField path="noCreateServer" type="boolean" required>
+  Whether or not to create and listen an express http/-s server for Dashboard.
+</ParamField>

@@ -28,6 +28,11 @@
   "primaryTab": {
     "name": "Home"
   },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true,
+    "raiseIssue": false
+  },
   "tabs": [
     {
       "name": "Discord Dashboard",
@@ -38,33 +43,7 @@
       "url": "soft-ui"
     }
   ],
-  "anchors": [
-    {
-      "name": "Discord",
-      "icon": "discord",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Discord Dashboard",
-      "icon": "server",
-      "url": "/dashboard"
-    },
-    {
-      "name": "Soft UI",
-      "icon": "brush",
-      "url": "/soft-ui/introduction"
-    },
-    {
-      "name": "Discord Dashboard Github",
-      "icon": "github",
-      "url": "https://github.com/Discord-Dashboard/Core"
-    },
-    {
-      "name": "Soft UI Github",
-      "icon": "github",
-      "url": "https://github.com/Discord-Dashboard/Soft-UI"
-    }
-  ],
+
   "navigation": [
     {
       "group": "Get Started",
@@ -90,8 +69,26 @@
         "dashboard/docs/client",
         "dashboard/docs/domain",
         "dashboard/docs/port",
+        "dashboard/docs/settings",
         "dashboard/docs/redirectUri",
         "dashboard/docs/theme"
+      ]
+    },
+    {
+      "group": "Optional Configuration",
+      "pages": [
+        "dashboard/docs/accept-privacy-policy",
+        "dashboard/docs/dont-create-server",
+        "dashboard/docs/efficient-saving",
+        "dashboard/docs/invite-endpoint",
+        "dashboard/docs/join-guild",
+        "dashboard/docs/minimized-logs",
+        "dashboard/docs/rate-limits",
+        "dashboard/docs/required-permissions",
+        "dashboard/docs/session-store",
+        "dashboard/docs/ssl",
+        "dashboard/docs/support-server",
+        "dashboard/docs/under-maintenance"
       ]
     },
     {
@@ -121,23 +118,29 @@
       "pages": ["soft-ui/docs/theme-maintenance", "soft-ui/docs/theme-404"]
     },
     {
+      "group": "Required Configuration",
+      "pages": [
+        "soft-ui/docs/admin",
+        "soft-ui/docs/custom-theme-options",
+        "soft-ui/docs/icons",
+        "soft-ui/docs/index",
+        "soft-ui/docs/preloader",
+        "soft-ui/docs/storage"
+      ]
+    },
+    {
       "group": "Theme Config",
       "pages": [
         "soft-ui/docs/addons",
-        "soft-ui/docs/admin",
         "soft-ui/docs/blacklisted",
         "soft-ui/docs/color-scheme",
         "soft-ui/docs/commands",
-        "soft-ui/docs/custom-theme-options",
         "soft-ui/docs/database-driver",
         "soft-ui/docs/error",
         "soft-ui/docs/footer",
-        "soft-ui/docs/icons",
-        "soft-ui/docs/index",
         "soft-ui/docs/locales",
         "soft-ui/docs/log-handler",
         "soft-ui/docs/meta",
-        "soft-ui/docs/preloader",
         "soft-ui/docs/premium",
         "soft-ui/docs/sharding",
         "soft-ui/docs/sidebar",

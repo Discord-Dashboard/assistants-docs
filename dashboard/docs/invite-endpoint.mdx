@@ -1,0 +1,52 @@
+---
+title: "Invite Endpoint"
+description: "Specify `/invite` endpoint behavior."
+---
+
+```js
+new DBD.Dashboard({
+    invite: {
+        clientId: String,
+        scopes: String[],
+        permissions: String,
+        redirectUri: String,
+        otherParams: String
+    },
+});
+```
+
+## Example Usage
+
+```javascript
+new DBD.Dashboard({
+  invite: {
+    clientId: "CLIENT_ID",
+    scopes: ["bot", "applications.commands"],
+    permissions: "8",
+    redirectUri: "http://localhost:3000",
+    otherParams: "test",
+  },
+});
+```
+
+## Props
+
+<ParamField path="clientId" type="string" required>
+  The client ID of the bot.
+</ParamField>
+
+<ParamField path="scopes" type="string[]" required>
+  The scopes of the bot.
+</ParamField>
+
+<ParamField path="permissions" type="string" required>
+  The [permissions int](https://discordapi.com/permissions.html) of the bot.
+</ParamField>
+
+<ParamField path="redirectUri" type="string" required>
+  The redirect URI of the bot.
+</ParamField>
+
+<ParamField path="otherParams" type="string" required>
+  The other params of the bot.
+</ParamField>
