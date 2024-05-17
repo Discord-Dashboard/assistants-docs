@@ -84,6 +84,17 @@
       "pages": ["dashboard/introduction"]
     },
     {
+      "group": "Required Configuration",
+      "pages": [
+        "dashboard/docs/bot",
+        "dashboard/docs/client",
+        "dashboard/docs/domain",
+        "dashboard/docs/port",
+        "dashboard/docs/redirectUri",
+        "dashboard/docs/theme"
+      ]
+    },
+    {
       "group": "Form Types",
       "pages": [
         "dashboard/docs/formtypes/channels-multiple-select",

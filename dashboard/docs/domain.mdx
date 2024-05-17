@@ -1,0 +1,25 @@
+---
+title: "Domain"
+description: "Your domain with protocol"
+---
+
+```js
+new DBD.Dashboard({
+  domain: String,
+});
+```
+
+## Example Usage
+
+```javascript
+new DBD.Dashboard({
+  domain: "http://localhost",
+});
+```
+
+## Props
+
+<ParamField path="domain" type="string" required>
+  Your domain with protocol (http://domain.com or https://domain.com) or
+  localhost with http protocol (http://localhost).
+</ParamField>

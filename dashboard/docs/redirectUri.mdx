@@ -1,0 +1,35 @@
+---
+title: "Redirect URL"
+description: "The Discord OAuth redirect URL."
+---
+
+```js
+new DBD.Dashboard({
+  redirectUri: String,
+});
+```
+
+<Info>
+  Please keep in mind that you will need to add the URL to your bots allowed
+  redirect URLs in the [Discord Developer
+  Portal](https://discord.com/developers/applications).
+</Info>
+
+## Example Usage
+
+```javascript
+new DBD.Dashboard({
+  redirectUri: "http://localhost/discord/callback",
+});
+```
+
+## Props
+
+<ParamField
+  path="redirectUri"
+  type="string"
+  required
+  default="http://localhost/discord/callback"
+>
+  The Discord OAuth redirect URL.
+</ParamField>

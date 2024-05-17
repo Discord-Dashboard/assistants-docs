@@ -1,0 +1,36 @@
+---
+title: "Client"
+description: "The Discord.JS Client object."
+---
+
+```js
+new DBD.Dashboard({
+  client: {
+    id: String,
+    secret: String,
+  },
+});
+```
+
+You can get those details from the [Discord Developer Portal](https://discord.com/developers/applications).
+
+## Example Usage
+
+```javascript
+new DBD.Dashboard({
+  client: {
+    id: "clientID",
+    secret: "clientSecret",
+  },
+});
+```
+
+## Props
+
+<ParamField path="id" type="string" required>
+  The client ID.
+</ParamField>
+
+<ParamField path="secret" type="string" required>
+  The client secret.
+</ParamField>
