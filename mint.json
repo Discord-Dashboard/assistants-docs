@@ -154,6 +154,7 @@
       "pages": [
         "soft-ui/docs/formtypes/date",
         "soft-ui/docs/formtypes/emoji-picker",
+        "soft-ui/docs/formtypes/multirow",
         "soft-ui/docs/formtypes/number-picker",
         "soft-ui/docs/formtypes/slider",
         "soft-ui/docs/formtypes/tag-input"
