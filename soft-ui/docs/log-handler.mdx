@@ -97,12 +97,12 @@ process.on("unhandledRejection", (reason, p) => {
 
 And we are done! Now just restart your dashboard and bot then the logs collection will begin.
 
-## Properties
+## Props
 
-### dashboard_url
+<ParamField path="dashboard_url" type="string" required>
+  A String with the url to your dashboard
+</ParamField>
 
-A String with the url to your dashboard
-
-### key
-
-A String with the secret key from your dashboard
+<ParamField path="key" type="string" required>
+  A String with the secret key from your dashboard
+</ParamField>
