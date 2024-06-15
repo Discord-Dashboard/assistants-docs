@@ -73,7 +73,7 @@ theme: SoftUI({
 theme: SoftUI({
     customThemeOptions: {
         index: async ({ req, res, config }) => {
-            let username = req.session?.user?.username || "Guest",
+            let username = req.session?.user?.username || "Guest";
 
             const cards = [
                 {
