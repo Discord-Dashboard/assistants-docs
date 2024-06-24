@@ -1,0 +1,151 @@
+---
+title: "MongoDB"
+icon: "database"
+---
+
+## What is MongoDB?
+
+MongoDB is a NoSQL database known for its high performance, scalability, and flexibility, using a document-oriented data model that stores data in JSON-like formats. It is widely used for handling large volumes of diverse and rapidly changing data, making it ideal for modern web applications.
+
+## Setting up MongoDB
+
+To set up MongoDB, you will need to install it on your server. You can do this by following the instructions provided by the official MongoDB website.
+
+Once MongoDB is installed, you will need to create a database and a collection within that database. You can do this by using the MongoDB shell or a database management tool like Robo 3T.
+
+After creating the database and collection, you can start using MongoDB to store and retrieve data in your Discord bot.
+
+## Connecting to MongoDB
+
+To connect to MongoDB in your Discord bot Dashboard, you will need to use the `mongoose` package. You can install it using npm or yarn.
+
+Once you have installed the package, you can import it into your code and use it to connect to your MongoDB database.
+
+Here is an example of how to connect to MongoDB using the `mongoose` package:
+
+```javascript
+const mongoose = require("mongoose");
+
+mongoose.set("strictQuery", true);
+
+mongoose
+  .connect("YOUR_MONGODB_URL", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connected to Database!");
+  })
+  .catch((err) => console.log(err));
+```
+
+## Creating a MongoDB Collection
+
+To create a MongoDB collection in your Discord bot Dashboard, you will need to use the `mongoose` package. You can install it using npm or yarn.
+
+Once you have installed the package, you can import it into your code and use it to create a new collection in your MongoDB database.
+
+Here is an example of how to create a MongoDB collection using the `mongoose` package. We created a seperate file called `level.js` and exported the collection as a module.
+
+```javascript
+const { model, Schema } = require("mongoose");
+
+module.exports = model(
+  "level",
+  new Schema({
+    Guild: String,
+    User: String,
+    Channel: String,
+    XP: Number,
+    Level: Number,
+    BackgroundImage: {
+      type: String,
+      default: "https://wallpaper.dog/large/961978.jpg",
+    },
+    counter: { type: Number, default: 0 },
+    timestamp: { type: Date, default: Date.now },
+  })
+);
+```
+
+## Query and Update Data
+
+To query and update data in the dashboard we need to import the file where we created the collection and use the `find` and `update` methods provided by the `mongoose` package.
+
+```javascript
+const mongoose = require("mongoose");
+const LevelDB = require("./level");
+
+// Rest of the code
+
+[...]
+const Dashboard = new DBD.Dashboard({
+    [...]
+    settings: [
+        [...]
+        {
+            categoryId: "level",
+            categoryName: "Levels",
+            categoryDescription: "Setup the level system for the bot",
+            categoryImageURL: 'https://cdn.discordapp.com/attachments/1062107362879619123/1062107518983221328/zeenbot.png',
+            categoryOptionsList: [
+                {
+                    optionId: "levelchannel",
+                    optionName: "Level Up Channel",
+                    optionDescription: "Set the channel for the level up notifications",
+                    optionType: DBD.formTypes.channelsSelect(false, channelTypes = [ChannelType.GuildText]),
+                    getActualSet: async ({ guild }) => {
+                        let data = await LevelUpDB.findOne({ Guild: guild.id }).catch(err => { })
+                        if (data) return data.Channel
+                        else return null
+                    },
+                    setNew: async ({ guild, newData }) => {
+                        let data = await LevelUpDB.findOne({ Guild: guild.id }).catch(err => { })
+                        if (!newData) newData = null
+                        if (!data) {
+                            data = new LevelUpDB({
+                                Guild: guild.id,
+                                Channel: newData,
+                            })
+                            await data.save()
+                        } else {
+                            data.Channel = newData
+                            await data.save()
+                        }
+                        return
+                    }
+                },
+                {
+                    optionId: "levelcardbg",
+                    optionName: "Level card background URL",
+                    optionDescription: "Set the background image for the level card",
+                    optionType: DBD.formTypes.input("https://wallpaper.dog/large/961978.jpg", 1, 200, false, false),
+                    getActualSet: async ({ guild }) => {
+                        let data = await LevelDB.findOne({ Guild: guild.id }).catch(err => { })
+                        if (data) return data.BackgroundImage
+                        else return null
+                    },
+                    setNew: async ({ guild, newData }) => {
+                        let data = await LevelDB.find({ Guild: guild.id }).catch(err => { })
+                        if (!newData) newData = null
+                        if (!data) {
+                            data = new LevelDB({
+                                Guild: guild.id,
+                                BackgroundImage: newData,
+                            })
+                            await data.save()
+                        } else {
+                            // Iterate through the array and update the data
+                            for (const d of data) {
+                                d.BackgroundImage = newData
+                                await d.save()
+                            }
+                        }
+                        return
+                    }
+                }
+            ]
+        },
+    ],
+    [...]
+```
