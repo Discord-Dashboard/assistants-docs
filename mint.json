@@ -110,6 +110,16 @@
       ]
     },
     {
+      "group": "Methods",
+      "pages": [
+        "dashboard/docs/methods/3rd-party-module",
+        "dashboard/docs/methods/create-custom-page",
+        "dashboard/docs/methods/dashboard-events",
+        "dashboard/docs/methods/settings-handler",
+        "dashboard/docs/methods/websockets"
+      ]
+    },
+    {
       "group": "Soft UI",
       "pages": ["soft-ui/introduction"]
     },
