@@ -1,0 +1,23 @@
+---
+title: "Web Sockets"
+description: "Dashboard has the Socket.io system loaded into it."
+---
+
+## Access
+
+```js
+const SocketIO = Dashboard.io;
+```
+
+Important: Socket.io is only available after using the `Dashboard.init()` method.
+
+## Usage
+
+```js
+const test = SocketIO.of("/test");
+test.on("connection", () => {
+  console.log("ModuleExample socket.io connected.");
+});
+```
+
+Web Socket is now accesible from the `ws://domain.com/test` if the SSL is not used with the Dashboard or `wss://domain.com/test` if it is.
