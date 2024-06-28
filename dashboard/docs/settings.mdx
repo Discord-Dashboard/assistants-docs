@@ -11,7 +11,7 @@ new DBD.Dashboard({
 });
 ```
 
-See more about [categories](/essentials/categories.mdx) and [options](/essentials/options.mdx)
+See more about [categories](/essentials/categories) and [options](/essentials/options)
 
 ## Example Usage
 
@@ -37,9 +37,11 @@ new DBD.Dashboard({
                 optionDescription: "Set bot prefix.",
                 optionType: DBD.formTypes.input('Prefix', 1, 4, false, false),
                 getActualSet: async ({guild}) => {
+                    // You will need to create your own query logic here. We use a variable as example!
                     return prefixData[guild.id] || '!';
                 },
                 setNew: async ({guild,newData}) => {
+                    // You will need to create your own save logic here. We use a variable as example!
                     prefixData[guild.id] = newData || '!';
                     return;
                 }

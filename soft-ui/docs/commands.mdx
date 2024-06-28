@@ -1,6 +1,6 @@
 ---
 title: "Commands"
-description: "An Array which is contains all categories and commands for the commands page."
+description: "An Array which contains all categories and commands for the commands page."
 ---
 
 ```js
@@ -11,9 +11,9 @@ theme: SoftUI({
       subTitle: String,
       categoryId: String,
       image: String,
-      hideAlias: Number, // Optional - Default: false - Hides the alias from all commands in the category
-      hideDescription: Number, // Optional - Default: false - Hides the description from all commands in the category
-      hideSidebarItem: Number, // Optional - Default: false - Hides the category from the sidebar
+      hideAlias: Boolean, // Optional - Default: false - Hides the alias from all commands in the category
+      hideDescription: Boolean, // Optional - Default: false - Hides the description from all commands in the category
+      hideSidebarItem: Boolean, // Optional - Default: false - Hides the category from the sidebar
       list: [
         {
           commandName: String,
