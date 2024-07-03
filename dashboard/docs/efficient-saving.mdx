@@ -35,7 +35,7 @@ settings: [
     },
     setNew: async ({ guild, newData }) => {
         // data = [ { optionId: 'lang', data: 'fr' } ]
-        for(const option of data) {
+        for(const option of newData) {
             if(option.optionId === "lang") langsSettings[guild.id] = option.data;
         }
         // Errors still work!
