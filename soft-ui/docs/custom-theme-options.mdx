@@ -74,17 +74,9 @@ theme: SoftUI({
     customThemeOptions: {
         index: async ({ req, res, config }) => {
             let username = req.session?.user?.username || "Guest";
+            let avatar = req.session?.user?.avatar ? `https://cdn.discordapp.com/avatars/${req.session.user.id}/${req.session.user.avatar}.png` : 'https://cdn.discordapp.com/embed/avatars/0.png';
 
             const cards = [
-                {
-                    title: "Current User",
-                    icon: "single-02",
-                    getValue: username,
-                    progressBar: {
-                        enabled: false,
-                        getProgress: client.guilds.cache.size
-                    }
-                },
                 {
                     title: "CPU",
                     icon: "single-02",
@@ -111,7 +103,16 @@ theme: SoftUI({
                         enabled: true,
                         getProgress: (client.guilds.cache.size / 75) * 100
                     }
-                }
+                },
+                {
+                    title: "Current User",
+                    icon: avatar, // Use the avatar URL here
+                    getValue: username,
+                    progressBar: {
+                        enabled: false,
+                        getProgress: client.guilds.cache.size // Placeholder value
+                    }
+                },
             ]
 
             return {
