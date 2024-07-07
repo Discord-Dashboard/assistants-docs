@@ -52,6 +52,47 @@ new DBD.Dashboard({
 });
 ```
 
-<ParamField path="settings" type="categoryObject[]" required>
-  An array of category objects.
-</ParamField>
+[//]: # (<ParamField path="settings" type="categoryObject[]" required>)
+
+[//]: # (  An array of category objects.)
+
+[//]: # (</ParamField>)
+
+## Props
+
+<ResponseField name="settings" type="Object[]" required>
+    <Expandable title="categoryObject" defaultOpen>
+        <ResponseField name="categoryId" type="string" required>
+            Unique ID of the category
+        </ResponseField>
+        <ResponseField name="categoryName" type="string" required>
+            The Name that should be displayed
+        </ResponseField>
+        <ResponseField name="categoryImageURL" type="string">
+            URL to an image to be shown
+        </ResponseField>
+        <ResponseField name="toggleable" type="boolean">
+            If the category should be toggleable
+        </ResponseField>
+        <ResponseField name="categoryDescription" type="string" required>
+            Short description of the category to be shown on the page
+        </ResponseField>
+        <ResponseField name="categoryOptionsList" type="Object[]" required>
+            The options that should be included
+        </ResponseField>
+        <Expandable title="categoryObject" defaultOpen>
+            <ResponseField name="optionId" type="string" required>
+                Unique ID of the option
+            </ResponseField>
+            <ResponseField name="optionName" type="string" required>
+                The Name that should be displayed
+            </ResponseField>
+            <ResponseField name="optionDescription" type="string" required>
+                Short description of the option to be shown on the page
+            </ResponseField>
+            <ResponseField name="optionType" type="object" required>
+                The [formtype](/essentials/formtypes) you want to use
+            </ResponseField>
+        </Expandable>
+    </Expandable>
+</ResponseField>
